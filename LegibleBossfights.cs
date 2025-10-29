@@ -16,12 +16,15 @@ namespace LegibleBossfights
 	{
         public static ModKeybind ToggleLineKey { get; private set; }
         public static Texture2D LineTexture { get; private set; }
+        public static Texture2D LineFadeTexture { get; private set; }
+        public static Texture2D PixelTexture { get; private set; }
         public static BlendState OverwriteBlend { get; private set; }
         public static int TotalLineThickness = 0;
         public static int LineThickness = 0;
         public static int LineBorderThickeness = 0;
         public static float LineAlpha = 0.9f;
         public const int MaxTextureSize = 64;
+        public const int FadeSize = 32;
         public override void Load()
         {
             OverwriteBlend = new BlendState
@@ -34,8 +37,10 @@ namespace LegibleBossfights
             // Defer pixel creation to the main thread
             Main.QueueMainThreadAction(() =>
             {
-                LineTexture = new Texture2D(Main.graphics.GraphicsDevice, 1, 64);
-                //LineTexture.SetData(new[] { Color.White });
+                LineTexture = new Texture2D(Main.graphics.GraphicsDevice, 1, MaxTextureSize);
+                LineFadeTexture = new Texture2D(Main.graphics.GraphicsDevice, FadeSize, MaxTextureSize);
+                PixelTexture = new Texture2D(Main.graphics.GraphicsDevice, 1, 1);
+                PixelTexture.SetData(new[] { Color.White });
             });
             ToggleLineKey = KeybindLoader.RegisterKeybind(this, "Toggle Cursor Line", "L");
             base.Load();

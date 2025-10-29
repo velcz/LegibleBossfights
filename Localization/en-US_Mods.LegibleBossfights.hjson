@@ -5,13 +5,13 @@ Configs: {
 		DisplayName: Legible Bossfights Config
 
 		TransparentFriendlyProjectiles: {
-			Label: Transparent Friendly Projectiles
+			Label: "[i:170] Transparent Friendly Projectiles"
 			Tooltip: Set alpha of all projectiles not marked as evil
 		}
 
 		LineThickness: {
 			Label: Line Thickness
-			Tooltip: How thick the line from the player to the cursor appears.
+			Tooltip: ""
 		}
 
 		LineAlpha: {
@@ -21,7 +21,22 @@ Configs: {
 
 		LineBorder: {
 			Label: Line Border Thickness
-			Tooltip: How thick the line border should be.
+			Tooltip: ""
+		}
+
+		LineColor: {
+			Label: Line Color
+			Tooltip: ""
+		}
+
+		OutlineColor: {
+			Label: Outline Color
+			Tooltip: ""
+		}
+
+		Headers: {
+			headerDeclutter: Screen Declutter Settings
+			headerLine: "[i:530] Cursor-Finder Settings"
 		}
 	}
 }
