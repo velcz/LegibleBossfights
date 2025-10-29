@@ -1,0 +1,27 @@
+"Keybinds.Toggle Cursor Line.DisplayName": Toggle  Cursor  Line
+
+Configs: {
+	LegibleBossfightsConfig: {
+		DisplayName: Legible Bossfights Config
+
+		TransparentFriendlyProjectiles: {
+			Label: Transparent Friendly Projectiles
+			Tooltip: Set alpha of all projectiles not marked as evil
+		}
+
+		LineThickness: {
+			Label: Line Thickness
+			Tooltip: How thick the line from the player to the cursor appears.
+		}
+
+		LineAlpha: {
+			Label: Line Transparency
+			Tooltip: How visible the line is. 1 = fully visible, 0 = fully transparent.
+		}
+
+		LineBorder: {
+			Label: Line Border Thickness
+			Tooltip: How thick the line border should be.
+		}
+	}
+}

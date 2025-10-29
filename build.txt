@@ -1,0 +1,4 @@
+displayName = Legible Bossfights
+author = Velcz
+version = 1.0
+side = client
