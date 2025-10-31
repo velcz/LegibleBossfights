@@ -9,10 +9,9 @@ using Terraria.ModLoader;
 
 namespace LegibleBossfights
 {
-    
+
     public class LegiblePlayer : ModPlayer
     {
-        public bool ShowLine;
         public override bool IsLoadingEnabled(Mod mod)
         {
             // Only load this mod on clients, not on dedicated servers
@@ -21,7 +20,16 @@ namespace LegibleBossfights
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
             if (LegibleBossfights.ToggleLineKey.JustPressed)
-                ShowLine = !ShowLine;
+            {
+                LegibleBossfights.ShowLine = !LegibleBossfights.ShowLine;
+                Main.NewText("Cursor Line: " + getboolname(LegibleBossfights.ShowLine), 100, 240, 100);
+            }
+            if (LegibleBossfights.ToggleProjKey.JustPressed)
+            {
+                LegibleBossfights.ShowCircles = !LegibleBossfights.ShowCircles;
+                Main.NewText("Enemy Projectile Indicators: " + getboolname(LegibleBossfights.ShowCircles), 100, 240, 100);
+            }
         }
+        public string getboolname(bool b) => b ? "ON" : "OFF";
     }
 }

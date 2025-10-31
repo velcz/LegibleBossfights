@@ -1,1 +1,9 @@
-This description will show up on the steam page, check out https://steamcommunity.com/comment/Guide/formattinghelp.
+[h3]Lightweight mod that attempts to make it easier to see whats going on during bossfights.[/h3]
+
+[list]
+[*]Adds a line that connects the player to the cursor to help with aiming.
+[*]Highlights enemy projectiles to make them easier to see.
+[*]Optionally makes friendly projectiles transparent to reduce visual clutter.
+[/list]
+
+All features can be toggled on/off and adjusted individually.

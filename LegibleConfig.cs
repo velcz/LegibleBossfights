@@ -1,4 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
+using Newtonsoft.Json;
+using System;
 using System.ComponentModel;
 using System.Runtime.Serialization;
 using Terraria;
@@ -17,13 +19,60 @@ namespace LegibleBossfights
             Instance = this;
         }
         public override ConfigScope Mode => ConfigScope.ClientSide;
-        [Header("headerDeclutter")]
-        [DefaultValue(1f)]
-        [Slider]
-        public float TransparentFriendlyProjectiles;
 
+        #region Automatic
+        [JsonProperty(Order = 100)]
+        [Header("headerAutomatic")]
+
+        [BackgroundColor(0, 0, 0, 255)]
+        [DefaultValue(true)]
+        public bool TransparentAutoBoss { get; set; }
+
+        [BackgroundColor(0, 0, 0, 255)]
+        [DefaultValue(true)]
+        public bool LineAutoBoss { get; set; }
+
+        [BackgroundColor(0, 0, 0, 255)]
+        [DefaultValue(true)]
+        public bool ProjectileCircleAutoBoss { get; set; }
+        #endregion
+        #region Declutter
+
+        [JsonProperty(Order = 125)]
+        [Header("headerDeclutter")]
+
+        [DefaultValue(false)]
+        [BackgroundColor(200, 80, 40, 180)]
+        public bool OnlySimplifyOtherPlayersProjectiles { get; set; }
+
+        [BackgroundColor(200, 120, 140, 180)]
+        [Range(0f, 1f)]
+        [DefaultValue(.75f)]
+        [Slider]
+        public float TransparentFriendlyProjectiles { get; set; }
+
+        [BackgroundColor(200, 120, 140, 180)]
+        [DefaultValue(false)]
+        public bool SimplifyFriendlyProjectileDrawing { get; set; }
+
+        
+
+        [BackgroundColor(200, 120, 140, 180)]
+        [DefaultValue(true)]
+        public bool ExcludePets { get; set; }
+
+        [Range(0f, 1f)]
+        [DefaultValue(0f)]
+        [Slider]
+        public float DustReducerChance { get; set; }
+
+        #endregion
+        #region Line
+
+        [JsonProperty(Order = 150)]
         [Header("headerLine")]
-        [DefaultValue(typeof(Color), "255, 56, 56, 255")] // R, G, B, A
+
+        [DefaultValue(typeof(Color), "255, 0, 0, 255")] // R, G, B, A
         [ColorNoAlpha]
         public Color LineColor { get; set; }
 
@@ -31,21 +80,68 @@ namespace LegibleBossfights
         [ColorNoAlpha]
         public Color OutlineColor { get; set; }
 
+        [Range(0f, 1f)]
+        [DefaultValue(0.8f)]
+        public float LineAlpha { get; set; }
+
         [Range(1, 10)]
-        [DefaultValue(2)]
+        [DefaultValue(4)]
         [Slider]
-        
+
         public int LineThickness { get; set; }
 
         [Range(0, 10)]
-        [DefaultValue(1)]
+        [DefaultValue(2)]
         [Slider]
         public int LineBorder { get; set; }
 
+        
+        #endregion
+        #region Projectile Highlighters
 
+        
+        [JsonProperty(Order = 115)]
+        [Header("headerProjectiles")]
+
+        [DefaultValue(typeof(Color), "0, 255, 0, 255")]
+        [ColorNoAlpha]
+        public Color ProjRingColor { get; set; }
+
+        [BackgroundColor(255, 139, 139, 255)]
+        [Range(100f, 1500f)]
+        [DefaultValue(525f)]
+        public float ProjectileCircleDistance { get; set; }
+
+        [BackgroundColor(255, 139, 139, 255)]
+        [Range(1f, 8f)]
+        [DefaultValue(1.8)]
+        public float ProjectileCircleSize { get; set; }
+
+        [BackgroundColor(255, 100, 100, 255)]
+        [Range(0f, 500)]
+        [DefaultValue(210)]
+        public float ProjectileCircleWarningDistance { get; set; }
+
+        [BackgroundColor(255, 100, 100, 255)]
+        [Range(0f, 3f)]
+        [DefaultValue(1f)]
+        public float ProjectileCircleGrow { get; set; }
+
+        [BackgroundColor(255, 200, 200, 255)]
         [Range(0f, 1f)]
-        [DefaultValue(0.67f)]
-        public float LineAlpha { get; set; }
+        [DefaultValue(0f)]
+        public float ProjectileCircleMinAlpha{ get; set; }
+
+        [BackgroundColor(255, 200, 200, 255)]
+        [Range(0f, 1f)]
+        [DefaultValue(1f)]
+        public float ProjectileCircleMaxAlpha { get; set; }
+
+        
+
+        #endregion
+        
+        
 
         [OnDeserialized]
         internal void OnDeserializedMethod(StreamingContext context)
@@ -55,7 +151,35 @@ namespace LegibleBossfights
         public override void OnChanged()
         {
             SetLineThickness();
-                
+            //set projectile variables
+            LineDrawSystem.ProjCircleFinalDistance = ProjectileCircleWarningDistance * 0.3f;
+            LineDrawSystem.ProjCircleGrowDistance = ProjectileCircleWarningDistance * 0.7f;
+            LineDrawSystem.ProjCircleMaxRadiusBoost = ProjectileCircleGrow * 24f;
+            LineDrawSystem.ProjAlphaDistance = ProjectileCircleDistance;
+            LineDrawSystem.ProjCircleRadius = 128f / ProjectileCircleSize;//when 8, =16, when 1, = 128
+            LineDrawSystem.ProjCircleMaxAlpha = ProjectileCircleMaxAlpha;
+            LineDrawSystem.ProjCircleMinAlpha = MathF.Min(ProjectileCircleMinAlpha, ProjectileCircleMaxAlpha);
+            //set auto toggles
+            LegibleBossfights.AutoLine = LineAutoBoss;
+            LegibleBossfights.AutoFriendlyProjectileHide = TransparentAutoBoss;
+            LegibleBossfights.AutoCircles = ProjectileCircleAutoBoss;
+
+            LegibleBossfights.ProjectileTransparency = 1f - TransparentFriendlyProjectiles;
+            LegibleBossfights.ParticleRate = 1f - DustReducerChance;
+
+            LineDrawSystem.RingColor = ProjRingColor;
+
+            for (int i = 0; i < Main.maxProjectiles; i++)
+            {
+                Projectile p = Main.projectile[i];
+                if (!p.active) continue;
+                LegibleBossfightsGlobalProjectile lp = p.GetGlobalProjectile<LegibleBossfightsGlobalProjectile>();
+                if (!Main.projPet[p.type]) continue;
+
+                lp.lowRender = !ExcludePets;
+                if (ExcludePets)
+                    p.Opacity = 1;
+            }
         }
         public void SetLineThickness()
         {

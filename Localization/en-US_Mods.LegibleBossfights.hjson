@@ -1,12 +1,19 @@
-"Keybinds.Toggle Cursor Line.DisplayName": Toggle  Cursor  Line
+Keybinds: {
+	"Toggle Cursor Line.DisplayName": Toggle  Cursor  Line
+	"Toggle Projectile Highlights.DisplayName": Toggle  Projectile  Highlights
+}
 
 Configs: {
 	LegibleBossfightsConfig: {
-		DisplayName: Legible Bossfights Config
+		DisplayName: Client Config
 
 		TransparentFriendlyProjectiles: {
 			Label: "[i:170] Transparent Friendly Projectiles"
-			Tooltip: Set alpha of all projectiles not marked as evil
+			Tooltip:
+				'''
+				Cut the alpha of all friendly projectiles by this amount.
+				[c/00ff00:Certain projectile FX will not be affected by this. Refer to the following setting for more.]
+				'''
 		}
 
 		LineThickness: {
@@ -15,12 +22,12 @@ Configs: {
 		}
 
 		LineAlpha: {
-			Label: Line Transparency
-			Tooltip: How visible the line is. 1 = fully visible, 0 = fully transparent.
+			Label: Alpha
+			Tooltip: ""
 		}
 
 		LineBorder: {
-			Label: Line Border Thickness
+			Label: Border Thickness
 			Tooltip: ""
 		}
 
@@ -30,13 +37,111 @@ Configs: {
 		}
 
 		OutlineColor: {
-			Label: Outline Color
+			Label: Border Color
 			Tooltip: ""
 		}
 
 		Headers: {
-			headerDeclutter: Screen Declutter Settings
-			headerLine: "[i:530] Cursor-Finder Settings"
+			headerDeclutter: "[i:2019] Screen Declutter Settings"
+			headerLine: "[i:530] Cursor Line Settings"
+			headerProjectiles: "[i:41] Enemy Projectile Highlight Settings"
+			headerAutomatic: "[i:43] Automatic Boss Activation Toggles"
+		}
+
+		ProjectileCircleSize: {
+			Label: Highlight Size
+			Tooltip:
+				'''
+				How large to scale the circle that appears around projectiles.
+				Default: 1.8
+				'''
+		}
+
+		ProjectileCircleGrow: {
+			Label: Warning Growth
+			Tooltip:
+				'''
+				Adjusts how large the circle will grow as the projectile nears the player.
+				Default: 1
+				'''
+		}
+
+		ProjectileCircleDistance: {
+			Label: Highlighting Distance
+			Tooltip:
+				'''
+				Highlights will slowly fade in at this range.
+				Default: 525
+				'''
+		}
+
+		ProjectileCircleWarningDistance: {
+			Label: Warning Distance
+			Tooltip:
+				'''
+				The Distance at which the circle will start to grow in size when its near to the player.
+				Default: 210
+				'''
+		}
+
+		ProjectileCircleMinAlpha: {
+			Label: Minimum Alpha
+			Tooltip: Alpha of circles that are out of range.
+		}
+
+		ProjectileCircleMaxAlpha: {
+			Label: Maximum Alpha
+			Tooltip: Alpha of circles when they are in the danger zone of the player.
+		}
+
+		TransparentAutoBoss: {
+			Label: "[i:2019] Auto Transparent Friendly Projectiles"
+			Tooltip: Only hide friendly projectiles when bosses are alive.
+		}
+
+		ProjectileCircleAutoBoss: {
+			Label: "[i:41] Auto Enemy Projectile Highlights"
+			Tooltip: Automatically enable/disable enemy projectile highlights when bosses are alive.
+		}
+
+		LineAutoBoss: {
+			Label: "[i:530] Auto Cursor Line"
+			Tooltip: Automatically enable/disable the cursor line when bosses are alive.
+		}
+
+		ProjRingColor: {
+			Label: Highlight Color
+			Tooltip: ""
+		}
+
+		DustReducerChance: {
+			Label: "[i:751]Particle Reducer"
+			Tooltip:
+				'''
+				Reduces particle/dust spawns.
+				0 = All particles, 1 = NO particles
+				[c/ff0000:Will not affect modded particles such as Calamity]
+				'''
+		}
+
+		SimplifyFriendlyProjectileDrawing: {
+			Label: "[i:949] Simplify Friendly Projectile Drawing"
+			Tooltip:
+				'''
+				Cuts out most visual effects from friendly projectiles and just draws their base sprite.
+				Use this if the transparency setting alone isn't cutting it.
+				[c/ff0000:Will cause some projectiles to appear glitched or not draw at all.]
+				'''
+		}
+
+		OnlySimplifyOtherPlayersProjectiles: {
+			Label: "[i:75] Only Hide Other Players Projectiles"
+			Tooltip: Will only apply the following effects to other players projectiles.
+		}
+
+		ExcludePets: {
+			Label: "[i:5332] Exclude Pets"
+			Tooltip: On = Pets will still be shown.
 		}
 	}
 }
