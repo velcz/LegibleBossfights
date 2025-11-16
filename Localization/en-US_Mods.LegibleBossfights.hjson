@@ -1,6 +1,7 @@
 Keybinds: {
 	"Toggle Cursor Line.DisplayName": Toggle  Cursor  Line
 	"Toggle Projectile Highlights.DisplayName": Toggle  Projectile  Highlights
+	"Toggle Transparent Friendly Projectiles.DisplayName": Toggle  Transparent  Friendly  Projectiles
 }
 
 Configs: {
@@ -158,6 +159,11 @@ Configs: {
 		MaxHighlightSize: {
 			Label: Max Highlight Size
 			Tooltip: Projectiles over this size will not be highlighted.
+		}
+
+		ParticleAutoBoss: {
+			Label: "[i:751]Auto Reduce Particles"
+			Tooltip: Only reduce particles when bosses are alive.
 		}
 	}
 }

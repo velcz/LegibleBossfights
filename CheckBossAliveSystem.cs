@@ -25,10 +25,16 @@ namespace LegibleBossfights
             isWOTGBoss = false;
             bool isBossAlive = IsAnyBossAlive();
 
-            if (!LegibleBossfights.AutoFriendlyProjectileHide)
-                LegibleBossfights.FadeProjectiles = true;
-            else if (LegibleBossfights.FadeProjectiles && !isBossAlive)
-                LegibleBossfights.FadeProjectiles = false;
+
+            //if (!LegibleBossfights.AutoFriendlyProjectileHide)
+            //     LegibleBossfights.FadeProjectiles = true;
+            //else if (LegibleBossfights.FadeProjectiles && !isBossAlive)
+            //    LegibleBossfights.FadeProjectiles = false;
+
+            if (!LegibleBossfights.AutoParticle)
+                LegibleBossfights.ReduceParticles = true;
+            else if (LegibleBossfights.ReduceParticles && !isBossAlive)
+                LegibleBossfights.ReduceParticles = false;
             checktime = 15;
             
 
@@ -37,6 +43,7 @@ namespace LegibleBossfights
                 if (LegibleBossfights.AutoCircles) LegibleBossfights.ShowCircles = true;
                 if (LegibleBossfights.AutoLine) LegibleBossfights.ShowLine = true;
                 if (LegibleBossfights.AutoFriendlyProjectileHide) LegibleBossfights.FadeProjectiles = true;
+                if (LegibleBossfights.AutoParticle) LegibleBossfights.ReduceParticles = true;
 
                 if (isWOTGBoss)
                 {
@@ -52,6 +59,7 @@ namespace LegibleBossfights
                 if (LegibleBossfights.AutoCircles) LegibleBossfights.ShowCircles = false;
                 if (LegibleBossfights.AutoLine) LegibleBossfights.ShowLine = false;
                 if (LegibleBossfights.AutoFriendlyProjectileHide) LegibleBossfights.FadeProjectiles = false;
+                if (LegibleBossfights.AutoParticle) LegibleBossfights.ReduceParticles = false;
                 if (setback)
                 {
                     LegibleBossfights.RedrawProjectileSprites = LegibleBossfightsConfig.Instance.ProjectileRedrawSprite;

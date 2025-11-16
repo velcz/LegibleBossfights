@@ -28,6 +28,11 @@ namespace LegibleBossfights
                 LegibleBossfights.ShowCircles = !LegibleBossfights.ShowCircles;
                 Main.NewText("Enemy Projectile Indicators: " + getboolname(LegibleBossfights.ShowCircles), 100, 240, 100);
             }
+            if (LegibleBossfights.ToggleTransparentKey.JustPressed)
+            {
+                LegibleBossfights.FadeProjectiles = !LegibleBossfights.FadeProjectiles;
+                Main.NewText("Transparent Friendly Projectiles: " + getboolname(LegibleBossfights.FadeProjectiles), 100, 240, 100);
+            }
         }
         public string getboolname(bool b) => b ? "ON" : "OFF";
     }

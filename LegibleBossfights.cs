@@ -16,6 +16,7 @@ namespace LegibleBossfights
 	{
         public static ModKeybind ToggleLineKey { get; private set; }
         public static ModKeybind ToggleProjKey { get; private set; }
+        public static ModKeybind ToggleTransparentKey { get; private set; }
         public static Texture2D LineTexture { get; private set; }
         public static Texture2D LineFadeTexture { get; private set; }
         public static Texture2D PixelTexture { get; private set; }
@@ -28,7 +29,7 @@ namespace LegibleBossfights
         public const int MaxTextureSize = 64;
         public const int FadeSize = 32;
 
-        public static bool AutoLine, AutoFriendlyProjectileHide, AutoCircles;
+        public static bool AutoLine, AutoFriendlyProjectileHide, AutoCircles, AutoParticle;
 
         public static float ProjectileTransparency;
         public static float ParticleRate;
@@ -37,6 +38,7 @@ namespace LegibleBossfights
         public static bool ShowCircles;
         public static bool FadeProjectiles;
         public static bool RedrawProjectileSprites;
+        public static bool ReduceParticles;
 
         public static int MaxHighlightSize = 200;
 
@@ -67,6 +69,7 @@ namespace LegibleBossfights
             });
             ToggleLineKey = KeybindLoader.RegisterKeybind(this, "Toggle Cursor Line", "L");
             ToggleProjKey = KeybindLoader.RegisterKeybind(this, "Toggle Projectile Highlights", "P");
+            ToggleTransparentKey = KeybindLoader.RegisterKeybind(this, "Toggle Transparent Friendly Projectiles", "O");
 
             WotGLoaded = ModLoader.TryGetMod("NoxusBoss", out WotGMod);
             base.Load();

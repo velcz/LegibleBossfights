@@ -41,7 +41,7 @@ namespace LegibleBossfights
             float spx = 0f, float spy = 0f, int alpha = 0, Color newColor=default, float scale = 1f)
         {
             int idx = orig(pos, width, height, type, spx, spy, alpha, newColor, scale);
-            if (LegibleBossfights.ParticleRate <= 1 && LegibleBossfights.FadeProjectiles && ShouldBlockSpawn())
+            if (LegibleBossfights.ParticleRate <= 1 && LegibleBossfights.ReduceParticles && ShouldBlockSpawn())
                 Main.dust[idx].active = false;//idx = orig(Vector2.Zero, width, height, type, spx, spy, 0, new Color(0, 0, 0, 0), 1f);
             return idx;
         }
@@ -51,7 +51,7 @@ namespace LegibleBossfights
             float spx = 0f, float spy = 0f, int alpha = 0, Color newColor = default, float scale = 1f)
         {
             Dust dust = orig(pos, width, height, type, spx, spy, alpha, newColor, scale); ;
-            if (LegibleBossfights.ParticleRate <= 1 && LegibleBossfights.FadeProjectiles && ShouldBlockSpawn())
+            if (LegibleBossfights.ParticleRate <= 1 && LegibleBossfights.ReduceParticles && ShouldBlockSpawn())
                 dust.active = false;
 
             return dust;
@@ -62,7 +62,7 @@ namespace LegibleBossfights
             Vector2? spd = default, int alpha = 0, Color newColor = default, float scale = 1f)
         {
             Dust dust = orig(pos, type, spd, alpha, newColor, scale);
-            if (LegibleBossfights.ParticleRate <= 1 && LegibleBossfights.FadeProjectiles && ShouldBlockSpawn())
+            if (LegibleBossfights.ParticleRate <= 1 && LegibleBossfights.ReduceParticles && ShouldBlockSpawn())
                 dust.active = false;
             return dust;
         }

@@ -35,6 +35,10 @@ namespace LegibleBossfights
         [BackgroundColor(0, 0, 0, 255)]
         [DefaultValue(true)]
         public bool ProjectileCircleAutoBoss { get; set; }
+
+        [BackgroundColor(0, 0, 0, 255)]
+        [DefaultValue(true)]
+        public bool ParticleAutoBoss { get; set; }
         #endregion
         #region Declutter
 
@@ -173,6 +177,7 @@ namespace LegibleBossfights
             LegibleBossfights.AutoLine = LineAutoBoss;
             LegibleBossfights.AutoFriendlyProjectileHide = TransparentAutoBoss;
             LegibleBossfights.AutoCircles = ProjectileCircleAutoBoss;
+            LegibleBossfights.AutoParticle = ParticleAutoBoss;
 
             LegibleBossfights.ProjectileTransparency = 1f - TransparentFriendlyProjectiles;
             LegibleBossfights.ParticleRate = 1f - DustReducerChance;
