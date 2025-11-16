@@ -12,7 +12,6 @@ using Terraria.ModLoader;
 
 namespace LegibleBossfights
 {
-	// Please read https://github.com/tModLoader/tModLoader/wiki/Basic-tModLoader-Modding-Guide#mod-skeleton-contents for more information about the various files in a mod.
 	public class LegibleBossfights : Mod
 	{
         public static ModKeybind ToggleLineKey { get; private set; }
@@ -37,6 +36,17 @@ namespace LegibleBossfights
         public static bool ShowLine;
         public static bool ShowCircles;
         public static bool FadeProjectiles;
+        public static bool RedrawProjectileSprites;
+
+        public static int MaxHighlightSize = 200;
+
+        /// <summary>
+        /// Checks to see if Wrath of the Gods is loaded. Used to force disable projectile sprite highlighting during any
+        /// of these fights as all the wacky effects cause issues with the highlight system. You really don't need
+        /// it regardless for these fights.
+        /// </summary>
+        internal static bool WotGLoaded;
+        internal static Mod WotGMod;
 
         public override void Load()
         {
@@ -48,7 +58,6 @@ namespace LegibleBossfights
                 AlphaSourceBlend = Blend.One,
                 AlphaDestinationBlend = Blend.Zero
             };
-            // Defer pixel creation to the main thread
             Main.QueueMainThreadAction(() =>
             {
                 LineTexture = new Texture2D(Main.graphics.GraphicsDevice, 1, MaxTextureSize);
@@ -58,11 +67,20 @@ namespace LegibleBossfights
             });
             ToggleLineKey = KeybindLoader.RegisterKeybind(this, "Toggle Cursor Line", "L");
             ToggleProjKey = KeybindLoader.RegisterKeybind(this, "Toggle Projectile Highlights", "P");
+
+            WotGLoaded = ModLoader.TryGetMod("NoxusBoss", out WotGMod);
             base.Load();
         }
+        internal static int NamelessDietyID, AvatarOfEmptinessID, MarsID;
         public override void PostSetupContent()
         {
             ModContent.GetInstance<LegibleBossfightsConfig>().SetLineThickness();
+            if (WotGLoaded)
+            {
+                AvatarOfEmptinessID = WotGMod.Find<ModNPC>("AvatarOfEmptiness").Type;
+                NamelessDietyID = WotGMod.Find<ModNPC>("NamelessDeityBoss").Type;//MarsBody
+                MarsID = WotGMod.Find<ModNPC>("MarsBody").Type;
+            }
             base.PostSetupContent();
         }
         public override void Unload()

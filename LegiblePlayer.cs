@@ -14,7 +14,6 @@ namespace LegibleBossfights
     {
         public override bool IsLoadingEnabled(Mod mod)
         {
-            // Only load this mod on clients, not on dedicated servers
             return !Main.dedServ;
         }
         public override void ProcessTriggers(TriggersSet triggersSet)

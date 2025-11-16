@@ -15,11 +15,14 @@ namespace LegibleBossfights
 
         private int checktime = 15;
 
-        public override void PostUpdateEverything()
+        private static bool isWOTGBoss = false;
+        private static bool setback = false;
+
+        public override void PostUpdatePlayers()
         {
             if (checktime-- > 0)
                 return;
-
+            isWOTGBoss = false;
             bool isBossAlive = IsAnyBossAlive();
 
             if (!LegibleBossfights.AutoFriendlyProjectileHide)
@@ -29,17 +32,31 @@ namespace LegibleBossfights
             checktime = 15;
             
 
-            if (isBossAlive && !_wasBossAlive)// Boss JUST spawned/engaged
+            if (isBossAlive && !_wasBossAlive)// Boss JUST spawned
             {
                 if (LegibleBossfights.AutoCircles) LegibleBossfights.ShowCircles = true;
                 if (LegibleBossfights.AutoLine) LegibleBossfights.ShowLine = true;
                 if (LegibleBossfights.AutoFriendlyProjectileHide) LegibleBossfights.FadeProjectiles = true;
+
+                if (isWOTGBoss)
+                {
+                    LegibleBossfights.RedrawProjectileSprites = false;
+                    Main.NewText("WOTG Boss Detected, disable redraw projectiles");
+                    setback = true;
+                }
+
+
             }
-            else if (!isBossAlive && _wasBossAlive)// Boss JUST despawned/died
+            else if (!isBossAlive && _wasBossAlive)// Boss JUST despawned
             {
                 if (LegibleBossfights.AutoCircles) LegibleBossfights.ShowCircles = false;
                 if (LegibleBossfights.AutoLine) LegibleBossfights.ShowLine = false;
                 if (LegibleBossfights.AutoFriendlyProjectileHide) LegibleBossfights.FadeProjectiles = false;
+                if (setback)
+                {
+                    LegibleBossfights.RedrawProjectileSprites = LegibleBossfightsConfig.Instance.ProjectileRedrawSprite;
+                    setback = false;
+                }
             }
 
             _wasBossAlive = isBossAlive;
@@ -50,6 +67,9 @@ namespace LegibleBossfights
             for (int i = 0; i < Main.maxNPCs; i++)
             {
                 NPC n = Main.npc[i];
+                if (LegibleBossfights.WotGLoaded)
+                    if (n.type == LegibleBossfights.AvatarOfEmptinessID || n.type == LegibleBossfights.NamelessDietyID || n.type == LegibleBossfights.MarsID)
+                        isWOTGBoss = true;
                 if (!n.active) continue;
                 if (n.boss) return true;
             }

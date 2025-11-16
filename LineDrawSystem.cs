@@ -111,39 +111,46 @@ namespace LegibleBossfights
                             radiusx += scale;
                             radiusy += scale;
                         }
-                        byte alphaamnt = (byte)(255 * (ProjCircleMinAlpha + alphamaxminusmin * boostalpha));
-                        Vector2 partpos = GetScreenCoords(p.Center);
-                        Color ringcoloradapted = new Color(RingColor.R, RingColor.G, RingColor.B, alphaamnt);
-                        //DrawCircle(spriteBatch, partpos, radiusx, radiusy, ringcoloradapted, Thickness, Segments);
-                        spriteBatch.Draw(
-                                ((Texture2D)LegibleBossfights.RingTexture),
-                                partpos,
-                                null,
-                                ringcoloradapted,
-                                0f,
-                                new Vector2(64, 64),
-                                new Vector2(radiusx / ProjCircleRadius, radiusy / ProjCircleRadius),
-                                SpriteEffects.None,
-                                0f
-                                );
-                        Texture2D tex = TextureAssets.Projectile[p.type].Value;
-                        Rectangle frame = tex.Frame(1, Main.projFrames[p.type], 0, p.frame);
-                        Vector2 origin = frame.Size() / 2f;
-                        SpriteEffects effects = p.spriteDirection == 1
-                            ? SpriteEffects.None
-                            : SpriteEffects.FlipHorizontally;
-                        spriteBatch.Draw(
-                            tex,
-                            partpos,
-                            frame,
-                            new Color(RingColor.R, RingColor.G, RingColor.B, alphaamnt),
-                            p.rotation,
-                            origin,
-                            p.scale,
-                            effects,
-                            0f
-                            );
-
+                        float drawnRadX = radiusx / ProjCircleRadius;
+                        float drawnRadY = radiusy / ProjCircleRadius;
+                        if (p.width < LegibleBossfights.MaxHighlightSize || p.height < LegibleBossfights.MaxHighlightSize)
+                        {
+                            byte alphaamnt = (byte)(255 * (ProjCircleMinAlpha + alphamaxminusmin * boostalpha));
+                            Vector2 partpos = GetScreenCoords(p.Center);
+                            Color ringcoloradapted = new Color(RingColor.R, RingColor.G, RingColor.B, alphaamnt);
+                            //DrawCircle(spriteBatch, partpos, radiusx, radiusy, ringcoloradapted, Thickness, Segments);
+                            spriteBatch.Draw(
+                                    ((Texture2D)LegibleBossfights.RingTexture),
+                                    partpos,
+                                    null,
+                                    ringcoloradapted,
+                                    0f,
+                                    new Vector2(64, 64),
+                                    new Vector2(drawnRadX, drawnRadY),
+                                    SpriteEffects.None,
+                                    0f
+                                    );
+                            if (LegibleBossfights.RedrawProjectileSprites)
+                            {
+                                Texture2D tex = TextureAssets.Projectile[p.type].Value;
+                                Rectangle frame = tex.Frame(1, Main.projFrames[p.type], 0, p.frame);
+                                Vector2 origin = frame.Size() / 2f;
+                                SpriteEffects effects = p.spriteDirection == 1
+                                    ? SpriteEffects.None
+                                    : SpriteEffects.FlipHorizontally;
+                                spriteBatch.Draw(
+                                    tex,
+                                    partpos,
+                                    frame,
+                                    new Color(RingColor.R, RingColor.G, RingColor.B, alphaamnt),
+                                    p.rotation,
+                                    origin,
+                                    p.scale,
+                                    effects,
+                                    0f
+                                    );
+                            }
+                        }
                     }
 
                 }

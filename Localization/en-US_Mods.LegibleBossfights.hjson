@@ -12,6 +12,7 @@ Configs: {
 			Tooltip:
 				'''
 				Cut the alpha of all friendly projectiles by this amount.
+				0 = Drawn normally, 1 - Fully transparent
 				[c/00ff00:Certain projectile FX will not be affected by this. Refer to the following setting for more.]
 				'''
 		}
@@ -121,6 +122,7 @@ Configs: {
 				Reduces particle/dust spawns.
 				0 = All particles, 1 = NO particles
 				[c/ff0000:Will not affect modded particles such as Calamity]
+				This setting is enabled in sync with the "Auto Hide Friendly Projectiles"
 				'''
 		}
 
@@ -142,6 +144,20 @@ Configs: {
 		ExcludePets: {
 			Label: "[i:5332] Exclude Pets"
 			Tooltip: On = Pets will still be shown.
+		}
+
+		ProjectileRedrawSprite: {
+			Label: Highlight Projectile Sprite
+			Tooltip:
+				'''
+				Redraws the sprite of enemy projectiles in the same color as their highlight
+				May cause extra visual clutter in some fights, toggle as you see fit.
+				'''
+		}
+
+		MaxHighlightSize: {
+			Label: Max Highlight Size
+			Tooltip: Projectiles over this size will not be highlighted.
 		}
 	}
 }

@@ -51,7 +51,7 @@ namespace LegibleBossfights
                     return base.PreDraw(projectile, ref lightColor);
                 if (lowRender)
                 {
-                    //cache former values for mod compatibility
+                    //cache former values for mod compatibility (calamity depends on projectile opacity to time some weapons)
                     formeropacity = projectile.Opacity;
                     formerlight = projectile.light;
                     float mult = LegibleBossfights.ProjectileTransparency;
@@ -100,7 +100,7 @@ namespace LegibleBossfights
                     return;
                 if (lowRender)
                 {
-                    //Set these back to former values for compatibility with other mods such as calamity which rely on projectile.Opacity for some AI functions on some weapons
+                    //Set these back to former values for compatibility
                     projectile.Opacity = formeropacity;
                     projectile.light = formerlight;
                     if (projectile.sentry)

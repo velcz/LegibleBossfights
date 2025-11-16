@@ -137,11 +137,19 @@ namespace LegibleBossfights
         [DefaultValue(1f)]
         public float ProjectileCircleMaxAlpha { get; set; }
 
-        
+        [DefaultValue(true)]
+        public bool ProjectileRedrawSprite { get; set; }
+
+        [Range(25, 500)]
+        [DefaultValue(150)]
+        [Slider]
+        public int MaxHighlightSize { get; set; }
+
+
 
         #endregion
-        
-        
+
+
 
         [OnDeserialized]
         internal void OnDeserializedMethod(StreamingContext context)
@@ -159,6 +167,8 @@ namespace LegibleBossfights
             LineDrawSystem.ProjCircleRadius = 128f / ProjectileCircleSize;//when 8, =16, when 1, = 128
             LineDrawSystem.ProjCircleMaxAlpha = ProjectileCircleMaxAlpha;
             LineDrawSystem.ProjCircleMinAlpha = MathF.Min(ProjectileCircleMinAlpha, ProjectileCircleMaxAlpha);
+            LegibleBossfights.RedrawProjectileSprites = ProjectileRedrawSprite;
+            LegibleBossfights.MaxHighlightSize = MaxHighlightSize;
             //set auto toggles
             LegibleBossfights.AutoLine = LineAutoBoss;
             LegibleBossfights.AutoFriendlyProjectileHide = TransparentAutoBoss;
