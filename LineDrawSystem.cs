@@ -31,18 +31,16 @@ namespace LegibleBossfights
         public static float ProjCircleMaxRadiusBoost = 24f;
         public static float ProjAlphaDistance = 512f;
 
-        public static float ProjCircleRadius = 100; //128 = 1x, 64 = 2x, 32 = 4x, 16 = 8x, 8 = 16x, 4 = 32x, 2 = 64x, 1 = 128x;
+        public static float ProjCircleRadius = 100;
         public static float ProjCircleMaxAlpha = 1f;
         public static float ProjCircleMinAlpha = .9f;
 
 
         public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
         {
-            // Find vanilla layer indices we want to be UNDER
             int invIdx = layers.FindIndex(l => l.Name.Equals("Vanilla: Inventory", StringComparison.Ordinal));
             int mapIdx = layers.FindIndex(l => l.Name.Equals("Vanilla: Map / Minimap", StringComparison.Ordinal));
 
-            // Choose the earliest one that exists. If neither exists, we’ll just add at the end.
             int insertAt = int.MaxValue;
             if (invIdx >= 0) insertAt = Math.Min(insertAt, invIdx);
             if (mapIdx >= 0) insertAt = Math.Min(insertAt, mapIdx);
@@ -54,17 +52,15 @@ namespace LegibleBossfights
                     drawinterface();
                     return true;
                 },
-                InterfaceScaleType.UI // use UI scaling, not world scaling
+                InterfaceScaleType.UI
             ));
         }
         public void drawinterface()
         {
             SpriteBatch spriteBatch = Main.spriteBatch;
             float fadesize = LegibleBossfights.FadeSize;
-            // if (Main.mapFullscreen) return;
             var lp = Main.LocalPlayer?.GetModPlayer<LegiblePlayer>();
             Vector2 playerworldpos = Main.LocalPlayer.MountedCenter + new Vector2(0f, Main.LocalPlayer.gfxOffY);
-            // Convert world -> screen (accounts for zoom)
             Vector2 playerposition = GetScreenCoords(playerworldpos);
             Vector2 mouseposition = Main.MouseScreen;
             spriteBatch.End();
@@ -77,7 +73,6 @@ namespace LegibleBossfights
                     ref Projectile p = ref Main.projectile[i];
                     if (!p.active || !p.hostile) continue;
                     if (!IsOnScreen(p.Hitbox)) continue;
-                    //adjustables
                     float alphamaxminusmin = ProjCircleMaxAlpha - ProjCircleMinAlpha;
 
                     if (!IsLaserLike(p))
@@ -93,9 +88,7 @@ namespace LegibleBossfights
                         }
                         else if (disttoplayer < ProjCircleFinalDistance + ProjCircleGrowDistance && disttoplayer > ProjCircleFinalDistance)
                         {
-                            // Distance above the threshold, normalized 0→1
                             float t = (ProjCircleFinalDistance + ProjCircleGrowDistance - disttoplayer) / ProjCircleGrowDistance;
-                            // Grow from 0 to 32 as t goes 0→1
                             float scale = ProjCircleMaxRadiusBoost * t;
                             boostalpha = 1;
                             radiusx += scale;
@@ -103,10 +96,8 @@ namespace LegibleBossfights
                         }
                         else if (disttoplayer < ProjCircleFinalDistance)
                         {
-                            // Distance below the threshold, normalized 0→1 (1 at far edge, 0 when touching)
                             float t = disttoplayer / ProjCircleFinalDistance;
                             boostalpha = 1;
-                            // Shrink from 32→0
                             float scale = ProjCircleMaxRadiusBoost * t;
                             radiusx += scale;
                             radiusy += scale;
@@ -118,7 +109,6 @@ namespace LegibleBossfights
                             byte alphaamnt = (byte)(255 * (ProjCircleMinAlpha + alphamaxminusmin * boostalpha));
                             Vector2 partpos = GetScreenCoords(p.Center);
                             Color ringcoloradapted = new Color(RingColor.R, RingColor.G, RingColor.B, alphaamnt);
-                            //DrawCircle(spriteBatch, partpos, radiusx, radiusy, ringcoloradapted, Thickness, Segments);
                             spriteBatch.Draw(
                                     ((Texture2D)LegibleBossfights.RingTexture),
                                     partpos,
@@ -213,9 +203,7 @@ namespace LegibleBossfights
                 }
             }
             #endregion
-           
-            //spriteBatch.End();
-            //spriteBatch.Begin();
+
         }
 
         private Vector2 GetScreenCoords(Vector2 pos)
@@ -226,26 +214,6 @@ namespace LegibleBossfights
     => p.aiStyle == ProjAIStyleID.ThickLaser
        || p.type == ProjectileID.SaucerDeathray
        || p.type == ProjectileID.EyeLaser;
-        private static void DrawCircle(SpriteBatch sb, Vector2 centerWorld, float radiusx, float radiusy, Color color, float thickness, int segments)
-        {
-            float step = MathHelper.TwoPi / segments;
-            Vector2 prev = centerWorld + new Vector2(radiusx, 0f);
-
-            for (int i = 1; i <= segments; i++)
-            {
-                float ang = step * i;
-                Vector2 next = centerWorld + new Vector2(MathF.Cos(ang) * radiusx, MathF.Sin(ang) * radiusy);
-                DrawLine(sb, prev, next, color, thickness);
-                prev = next;
-            }
-        }
-
-        private static void DrawLine(SpriteBatch sb, Vector2 start, Vector2 end, Color color, float thickness)
-        {
-            Vector2 edge = end - start;
-            float angle = MathF.Atan2(edge.Y, edge.X);
-            sb.Draw(LegibleBossfights.PixelTexture, start, null, color, angle, Vector2.Zero, new Vector2(edge.Length(), thickness), SpriteEffects.None, 0f);
-        }
 
         private static bool IsOnScreen(Rectangle worldRect)
         {

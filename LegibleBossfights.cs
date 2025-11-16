@@ -19,7 +19,7 @@ namespace LegibleBossfights
         public static ModKeybind ToggleTransparentKey { get; private set; }
         public static Texture2D LineTexture { get; private set; }
         public static Texture2D LineFadeTexture { get; private set; }
-        public static Texture2D PixelTexture { get; private set; }
+
         public static Asset<Texture2D> RingTexture;
         public static BlendState OverwriteBlend { get; private set; }
         public static int TotalLineThickness = 0;
@@ -64,8 +64,6 @@ namespace LegibleBossfights
             {
                 LineTexture = new Texture2D(Main.graphics.GraphicsDevice, 1, MaxTextureSize);
                 LineFadeTexture = new Texture2D(Main.graphics.GraphicsDevice, FadeSize, MaxTextureSize);
-                PixelTexture = new Texture2D(Main.graphics.GraphicsDevice, 1, 1);
-                PixelTexture.SetData(new[] { Color.White });
             });
             ToggleLineKey = KeybindLoader.RegisterKeybind(this, "Toggle Cursor Line", "L");
             ToggleProjKey = KeybindLoader.RegisterKeybind(this, "Toggle Projectile Highlights", "P");
@@ -92,7 +90,6 @@ namespace LegibleBossfights
                 Main.QueueMainThreadAction(() => { 
                     LineTexture?.Dispose(); LineTexture = null;
                     LineFadeTexture?.Dispose(); LineFadeTexture = null;
-                    PixelTexture?.Dispose(); PixelTexture = null;
                 });
         }
         }
