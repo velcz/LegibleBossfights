@@ -49,6 +49,7 @@ Configs: {
 			headerLine: "[i:530] Cursor Line Settings"
 			headerProjectiles: "[i:41] Enemy Projectile Highlight Settings"
 			headerAutomatic: "[i:43] Automatic Boss Activation Toggles"
+			headerMisc: "[i:1875] Misc Settings"
 		}
 
 		ProjectileCircleSize: {
@@ -118,7 +119,7 @@ Configs: {
 		}
 
 		DustReducerChance: {
-			Label: "[i:751]Particle Reducer"
+			Label: "[i:751] Particle Reducer"
 			Tooltip:
 				'''
 				Reduces particle/dust spawns.
@@ -163,7 +164,7 @@ Configs: {
 		}
 
 		ParticleAutoBoss: {
-			Label: "[i:751]Auto Reduce Particles"
+			Label: "[i:751] Auto Reduce Particles"
 			Tooltip: Only reduce particles when bosses are alive.
 		}
 
@@ -183,11 +184,20 @@ Configs: {
 		}
 
 		AutoHideWalls: {
-			Label: "[i:30]Auto Hide Walls"
+			Label: "[i:30] Auto Hide Walls"
 			Tooltip:
 				'''
 				Automatically stops walls from being drawn when bosses are alive.
 				Can significantly improve fps if many walls are present nearby.
+				'''
+		}
+
+		NoShaking: {
+			Label: "[i:5120] Disable Vanilla Screen Shake"
+			Tooltip:
+				'''
+				Stops the screen punch effect used by deerclops, and any other added enemies that use this system.
+				Will not effect modded systems, but most should have a setting to disable them anyways.
 				'''
 		}
 	}

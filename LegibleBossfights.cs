@@ -51,6 +51,8 @@ namespace LegibleBossfights
 
         public static bool HideWalls = false;
 
+        public static bool NoShaking = false;
+
         /// <summary>
         /// Checks to see if Wrath of the Gods is loaded. Used to force disable projectile sprite highlighting during any
         /// of these fights as all the wacky effects cause issues with the highlight system. You really don't need

@@ -108,7 +108,11 @@ namespace LegibleBossfights
                         }
                         float drawnRadX = radiusx / ProjCircleRadius;
                         float drawnRadY = radiusy / ProjCircleRadius;
-                        if (p.width < LegibleBossfights.MaxHighlightSize || p.height < LegibleBossfights.MaxHighlightSize)
+
+                        float checkboundx = TextureAssets.Projectile[p.type].Value.Width * p.scale;
+                        float checkboundy = TextureAssets.Projectile[p.type].Value.Height * p.scale;
+
+                        if (checkboundx < LegibleBossfights.MaxHighlightSize || checkboundy < LegibleBossfights.MaxHighlightSize)
                         {
                             byte alphaamnt = (byte)(255 * (ProjCircleMinAlpha + alphamaxminusmin * boostalpha));
                             passedprojlist.Add((p, alphaamnt));

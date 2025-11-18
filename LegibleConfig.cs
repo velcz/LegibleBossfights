@@ -81,6 +81,10 @@ namespace LegibleBossfights
         public float DustReducerChance { get; set; }
 
         #endregion
+
+        [Header("headerMisc")]
+        [DefaultValue(false)]
+        public bool NoShaking { get; set; }
         #region Line
 
         [JsonProperty(Order = 150)]
@@ -197,6 +201,7 @@ namespace LegibleBossfights
             LegibleBossfights.ProjectileTransparency = 1f - TransparentFriendlyProjectiles;
             LegibleBossfights.ParticleRate = 1f - DustReducerChance;
 
+            LegibleBossfights.NoShaking = NoShaking;
 
             LineDrawSystem.RingColor = ProjRingColor;
 
@@ -243,4 +248,5 @@ namespace LegibleBossfights
 
         }
     }
+
 }
