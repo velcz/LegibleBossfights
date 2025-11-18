@@ -11,6 +11,12 @@ using Terraria.ModLoader.UI.ModBrowser;
 
 namespace LegibleBossfights
 {
+    public enum ProjectileHighlightMode
+    {
+        None,
+        Simple,
+        Fancy
+    }
     public sealed class LegibleBossfightsConfig : ModConfig
     {
         public static LegibleBossfightsConfig Instance;
@@ -39,6 +45,10 @@ namespace LegibleBossfights
         [BackgroundColor(0, 0, 0, 255)]
         [DefaultValue(true)]
         public bool ParticleAutoBoss { get; set; }
+
+        [BackgroundColor(0, 0, 0, 255)]
+        [DefaultValue(false)]
+        public bool AutoHideWalls { get; set; }
         #endregion
         #region Declutter
 
@@ -107,7 +117,15 @@ namespace LegibleBossfights
         [JsonProperty(Order = 115)]
         [Header("headerProjectiles")]
 
-        [DefaultValue(typeof(Color), "0, 255, 0, 255")]
+        [BackgroundColor(0, 0, 0, 255)]
+        [DefaultValue(ProjectileHighlightMode.Fancy)]
+        public ProjectileHighlightMode ProjectileHighlightMode { get; set; }
+
+        [DefaultValue(false)]
+        [BackgroundColor(0, 0, 0, 255)]
+        public bool DrawCircles { get; set; }
+
+        [DefaultValue(typeof(Color), "255, 255, 255, 255")]
         [ColorNoAlpha]
         public Color ProjRingColor { get; set; }
 
@@ -117,7 +135,7 @@ namespace LegibleBossfights
         public float ProjectileCircleDistance { get; set; }
 
         [BackgroundColor(255, 139, 139, 255)]
-        [Range(1f, 8f)]
+        [Range(.5f, 4f)]
         [DefaultValue(1.8)]
         public float ProjectileCircleSize { get; set; }
 
@@ -141,15 +159,10 @@ namespace LegibleBossfights
         [DefaultValue(1f)]
         public float ProjectileCircleMaxAlpha { get; set; }
 
-        [DefaultValue(true)]
-        public bool ProjectileRedrawSprite { get; set; }
-
         [Range(25, 500)]
         [DefaultValue(150)]
         [Slider]
         public int MaxHighlightSize { get; set; }
-
-
 
         #endregion
 
@@ -171,16 +184,19 @@ namespace LegibleBossfights
             LineDrawSystem.ProjCircleRadius = 128f / ProjectileCircleSize;//when 8, =16, when 1, = 128
             LineDrawSystem.ProjCircleMaxAlpha = ProjectileCircleMaxAlpha;
             LineDrawSystem.ProjCircleMinAlpha = MathF.Min(ProjectileCircleMinAlpha, ProjectileCircleMaxAlpha);
-            LegibleBossfights.RedrawProjectileSprites = ProjectileRedrawSprite;
             LegibleBossfights.MaxHighlightSize = MaxHighlightSize;
+            LegibleBossfights.DrawCircleHighlights = DrawCircles;
+            LegibleBossfights.ProjectileHighlightMode = ProjectileHighlightMode;
             //set auto toggles
             LegibleBossfights.AutoLine = LineAutoBoss;
             LegibleBossfights.AutoFriendlyProjectileHide = TransparentAutoBoss;
             LegibleBossfights.AutoCircles = ProjectileCircleAutoBoss;
             LegibleBossfights.AutoParticle = ParticleAutoBoss;
+            LegibleBossfights.AutoHideWalls = AutoHideWalls;
 
             LegibleBossfights.ProjectileTransparency = 1f - TransparentFriendlyProjectiles;
             LegibleBossfights.ParticleRate = 1f - DustReducerChance;
+
 
             LineDrawSystem.RingColor = ProjRingColor;
 

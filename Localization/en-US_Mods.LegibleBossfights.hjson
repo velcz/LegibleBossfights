@@ -2,6 +2,7 @@ Keybinds: {
 	"Toggle Cursor Line.DisplayName": Toggle  Cursor  Line
 	"Toggle Projectile Highlights.DisplayName": Toggle  Projectile  Highlights
 	"Toggle Transparent Friendly Projectiles.DisplayName": Toggle  Transparent  Friendly  Projectiles
+	"Toggle Hide Walls.DisplayName": Toggle  Hide  Walls
 }
 
 Configs: {
@@ -51,7 +52,7 @@ Configs: {
 		}
 
 		ProjectileCircleSize: {
-			Label: Highlight Size
+			Label: Circle - Highlight Size
 			Tooltip:
 				'''
 				How large to scale the circle that appears around projectiles.
@@ -60,7 +61,7 @@ Configs: {
 		}
 
 		ProjectileCircleGrow: {
-			Label: Warning Growth
+			Label: Circle - Warning Growth
 			Tooltip:
 				'''
 				Adjusts how large the circle will grow as the projectile nears the player.
@@ -69,7 +70,7 @@ Configs: {
 		}
 
 		ProjectileCircleDistance: {
-			Label: Highlighting Distance
+			Label: Circle - Highlighting Distance
 			Tooltip:
 				'''
 				Highlights will slowly fade in at this range.
@@ -78,7 +79,7 @@ Configs: {
 		}
 
 		ProjectileCircleWarningDistance: {
-			Label: Warning Distance
+			Label: Circle - Warning Distance
 			Tooltip:
 				'''
 				The Distance at which the circle will start to grow in size when its near to the player.
@@ -87,12 +88,12 @@ Configs: {
 		}
 
 		ProjectileCircleMinAlpha: {
-			Label: Minimum Alpha
+			Label: Circle - Minimum Alpha
 			Tooltip: Alpha of circles that are out of range.
 		}
 
 		ProjectileCircleMaxAlpha: {
-			Label: Maximum Alpha
+			Label: Circle - Maximum Alpha
 			Tooltip: Alpha of circles when they are in the danger zone of the player.
 		}
 
@@ -164,6 +165,49 @@ Configs: {
 		ParticleAutoBoss: {
 			Label: "[i:751]Auto Reduce Particles"
 			Tooltip: Only reduce particles when bosses are alive.
+		}
+
+		ProjectileFancyHighlighting: {
+			Label: Projectile Fancy Highlighting
+			Tooltip: ""
+		}
+
+		ProjectileHighlightMode: {
+			Label: Projectile Highlight Mode
+			Tooltip: ""
+		}
+
+		DrawCircles: {
+			Label: Draw Circles
+			Tooltip: Should warning circles be drawn around the projectile?
+		}
+
+		AutoHideWalls: {
+			Label: "[i:30]Auto Hide Walls"
+			Tooltip:
+				'''
+				Automatically stops walls from being drawn when bosses are alive.
+				Can significantly improve fps if many walls are present nearby.
+				'''
+		}
+	}
+
+	ProjectileHighlightMode: {
+		Tooltip: ""
+
+		None: {
+			Label: None
+			Tooltip: No highlight effects will be used.
+		}
+
+		Simple: {
+			Label: Simple
+			Tooltip: Simply attempts to redraw the projectile's sprite in the chosen highlight color on its own layer.
+		}
+
+		Fancy: {
+			Label: Fancy
+			Tooltip: Uses a shader based approach to lighten the projectile and draw an outline around it.
 		}
 	}
 }

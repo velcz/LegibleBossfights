@@ -1,10 +1,17 @@
 A lightweight mod that attempts to make it easier to see whats going on during bossfights.
 
+V1.1 Changes:
+-Greatly improved enemy projectile highlighting system, with options for different styles of highlights.
+-Added optional function to disable background wall drawing.
+	* Can help with visibility in a walled arena, but can also give big performance gains in densely walled areas.
+	* Disabled by default.
+
 This mod can:
 -Add a line that connects the player to the cursor to help with aiming.
 -Make friendly projectiles transparent or totally invisible to reduce visual clutter. (optionally overwrites drawing of said projectiles to fully kill off any effects that don't get removed by simple opacity tweaks)
 -Highlight enemy projectiles to make them easier to see.
 -Reduce frequency of vanilla particles/dust (or fully disable them).
+-Disable background wall drawing to improve visibility and performance in wall-dense areas.
 
 All features can be set individually to only turn on during bossfights, and can be toggled by keybinds at any time.
 

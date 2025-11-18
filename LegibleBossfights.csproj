@@ -10,7 +10,18 @@
 
 	<!-- References -->
 	<ItemGroup>
-		
+	  <AdditionalFiles Remove="assets\glowshader.fx" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Effects\glowshader.xnb" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Effects\glowshader.fx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Effects\glowshader.xnb">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </EmbeddedResource>
 	</ItemGroup>
 
 </Project>

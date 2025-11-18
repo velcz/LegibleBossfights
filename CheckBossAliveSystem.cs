@@ -44,15 +44,13 @@ namespace LegibleBossfights
                 if (LegibleBossfights.AutoLine) LegibleBossfights.ShowLine = true;
                 if (LegibleBossfights.AutoFriendlyProjectileHide) LegibleBossfights.FadeProjectiles = true;
                 if (LegibleBossfights.AutoParticle) LegibleBossfights.ReduceParticles = true;
+                if (LegibleBossfights.AutoHideWalls) LegibleBossfights.HideWalls = true;
 
                 if (isWOTGBoss)
                 {
-                    LegibleBossfights.RedrawProjectileSprites = false;
-                    Main.NewText("WOTG Boss Detected, disable redraw projectiles");
+                    LegibleBossfights.ProjectileHighlightMode = ProjectileHighlightMode.None;
                     setback = true;
                 }
-
-
             }
             else if (!isBossAlive && _wasBossAlive)// Boss JUST despawned
             {
@@ -60,9 +58,10 @@ namespace LegibleBossfights
                 if (LegibleBossfights.AutoLine) LegibleBossfights.ShowLine = false;
                 if (LegibleBossfights.AutoFriendlyProjectileHide) LegibleBossfights.FadeProjectiles = false;
                 if (LegibleBossfights.AutoParticle) LegibleBossfights.ReduceParticles = false;
+                if (LegibleBossfights.AutoHideWalls) LegibleBossfights.HideWalls = false;
                 if (setback)
                 {
-                    LegibleBossfights.RedrawProjectileSprites = LegibleBossfightsConfig.Instance.ProjectileRedrawSprite;
+                    LegibleBossfights.ProjectileHighlightMode = LegibleBossfightsConfig.Instance.ProjectileHighlightMode;
                     setback = false;
                 }
             }

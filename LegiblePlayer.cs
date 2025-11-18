@@ -33,6 +33,13 @@ namespace LegibleBossfights
                 LegibleBossfights.FadeProjectiles = !LegibleBossfights.FadeProjectiles;
                 Main.NewText("Transparent Friendly Projectiles: " + getboolname(LegibleBossfights.FadeProjectiles), 100, 240, 100);
             }
+            if (LegibleBossfights.ToggleHideWallsKey.JustPressed)
+            {
+                LegibleBossfights.HideWalls = !LegibleBossfights.HideWalls;
+
+                if (Main.netMode != Terraria.ID.NetmodeID.Server)
+                    Main.NewText($"Hide Walls: {(LegibleBossfights.HideWalls ? "ON" : "OFF")}", 200, 200, 255);
+            }
         }
         public string getboolname(bool b) => b ? "ON" : "OFF";
     }
