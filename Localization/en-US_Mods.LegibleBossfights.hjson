@@ -5,6 +5,15 @@ Keybinds: {
 	"Toggle Hide Walls.DisplayName": Toggle  Hide  Walls
 }
 
+Messages: {
+	ShowLine: Cursor Line: {0}
+	ShowCircles: Enemy Projectile Hightlights: {0}
+	FadeProjectiles: Hide Friendly Projectiles: {0}
+	HideWalls: Hide Walls: {0}
+	On: ON
+	Off: OFF
+}
+
 Configs: {
 	LegibleBossfightsConfig: {
 		DisplayName: Client Config

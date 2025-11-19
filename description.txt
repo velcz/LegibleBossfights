@@ -1,5 +1,8 @@
 A lightweight mod that attempts to make it easier to see whats going on during bossfights.
 
+V1.1.2:
+-Added localization files for all in-game languages via a translator app.
+
 V1.1.1:
 -Added option to disable vanilla screen shake effects.
 -Fixed bug with correctly detecting the max projectile size for highlighting.

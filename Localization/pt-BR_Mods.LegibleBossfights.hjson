@@ -1,0 +1,232 @@
+Keybinds: {
+	"Toggle Cursor Line.DisplayName": Alternar linha do cursor
+	"Toggle Projectile Highlights.DisplayName": Alternar destaque de proj�teis
+	"Toggle Transparent Friendly Projectiles.DisplayName": Alternar proj�teis aliados transparentes
+	"Toggle Hide Walls.DisplayName": Alternar ocultar paredes
+}
+
+Messages: {
+	ShowLine: Linha do cursor: {0}
+	ShowCircles: Destaque de proj�teis inimigos: {0}
+	FadeProjectiles: Ocultar proj�teis aliados: {0}
+	HideWalls: Ocultar paredes: {0}
+	On: ATIVADO
+	Off: DESATIVADO
+}
+
+Configs: {
+	LegibleBossfightsConfig: {
+		DisplayName: Configura��es do cliente
+
+		TransparentFriendlyProjectiles: {
+			Label: "[i:170] Proj�teis aliados transparentes"
+			Tooltip:
+				'''
+				Reduz a alpha (transpar�ncia) de todos os proj�teis aliados por esta quantidade.
+				0 = Desenhado normalmente, 1 = Totalmente transparente
+				[c/00ff00:Certos efeitos de proj�teis n�o ser�o afetados. Consulte a pr�xima configura��o para mais detalhes.]
+				'''
+		}
+
+		LineThickness: {
+			Label: Espessura da linha
+			Tooltip: ""
+		}
+
+		LineAlpha: {
+			Label: Alpha
+			Tooltip: ""
+		}
+
+		LineBorder: {
+			Label: Espessura da borda
+			Tooltip: ""
+		}
+
+		LineColor: {
+			Label: Cor da linha
+			Tooltip: ""
+		}
+
+		OutlineColor: {
+			Label: Cor da borda
+			Tooltip: ""
+		}
+
+		Headers: {
+			headerDeclutter: "[i:2019] Configura��es de limpeza da tela"
+			headerLine: "[i:530] Configura��es da linha do cursor"
+			headerProjectiles: "[i:41] Configura��es de destaque de proj�teis inimigos"
+			headerAutomatic: "[i:43] Altern�ncias autom�ticas com chefes"
+			headerMisc: "[i:1875] Configura��es diversas"
+		}
+
+		ProjectileCircleSize: {
+			Label: C�rculo � Tamanho do destaque
+			Tooltip:
+				'''
+				Define o tamanho do c�rculo que aparece ao redor dos proj�teis.
+				Padr�o: 1.8
+				'''
+		}
+
+		ProjectileCircleGrow: {
+			Label: C�rculo � Crescimento de alerta
+			Tooltip:
+				'''
+				Ajusta quanto o c�rculo aumentar� conforme o proj�til se aproxima do jogador.
+				Padr�o: 1
+				'''
+		}
+
+		ProjectileCircleDistance: {
+			Label: C�rculo � Dist�ncia de destaque
+			Tooltip:
+				'''
+				O destaque come�ar� a aparecer gradualmente nesta dist�ncia.
+				Padr�o: 525
+				'''
+		}
+
+		ProjectileCircleWarningDistance: {
+			Label: C�rculo � Dist�ncia de alerta
+			Tooltip:
+				'''
+				A dist�ncia na qual o c�rculo come�ar� a crescer quando o proj�til estiver pr�ximo do jogador.
+				Padr�o: 210
+				'''
+		}
+
+		ProjectileCircleMinAlpha: {
+			Label: C�rculo � Alpha m�nimo
+			Tooltip: Alpha dos c�rculos que est�o fora do alcance.
+		}
+
+		ProjectileCircleMaxAlpha: {
+			Label: C�rculo � Alpha m�ximo
+			Tooltip: Alpha dos c�rculos quando est�o na zona de perigo do jogador.
+		}
+
+		TransparentAutoBoss: {
+			Label: "[i:2019] Auto: Proj�teis aliados transparentes"
+			Tooltip: Apenas oculta proj�teis aliados quando um chefe est� ativo.
+		}
+
+		ProjectileCircleAutoBoss: {
+			Label: "[i:41] Auto: Destaque de proj�teis inimigos"
+			Tooltip: Ativa/desativa automaticamente o destaque de proj�teis inimigos durante batalhas contra chefes.
+		}
+
+		LineAutoBoss: {
+			Label: "[i:530] Auto: Linha do cursor"
+			Tooltip: Ativa/desativa automaticamente a linha do cursor quando um chefe est� ativo.
+		}
+
+		ProjRingColor: {
+			Label: Cor do destaque
+			Tooltip: ""
+		}
+
+		DustReducerChance: {
+			Label: "[i:751] Redutor de part�culas"
+			Tooltip:
+				'''
+				Reduz a gera��o de part�culas/poeira.
+				0 = Todas as part�culas, 1 = Nenhuma part�cula
+				[c/ff0000:N�o afeta part�culas de mods como Calamity]
+				Esta configura��o funciona em sincronia com �Auto: Ocultar proj�teis aliados�.
+				'''
+		}
+
+		SimplifyFriendlyProjectileDrawing: {
+			Label: "[i:949] Simplificar desenho de proj�teis aliados"
+			Tooltip:
+				'''
+				Remove a maior parte dos efeitos visuais de proj�teis aliados e desenha apenas o sprite base.
+				Use isto se a transpar�ncia sozinha n�o for suficiente.
+				[c/ff0000:Pode causar erros visuais ou impedir que alguns proj�teis apare�am.]
+				'''
+		}
+
+		OnlySimplifyOtherPlayersProjectiles: {
+			Label: "[i:75] Ocultar apenas proj�teis de outros jogadores"
+			Tooltip: Aplica os seguintes efeitos somente a proj�teis de outros jogadores.
+		}
+
+		ExcludePets: {
+			Label: "[i:5332] Excluir pets"
+			Tooltip: Ativado = Pets continuar�o vis�veis.
+		}
+
+		ProjectileRedrawSprite: {
+			Label: Redesenhar sprite do proj�til
+			Tooltip:
+				'''
+				Redesenha o sprite de proj�teis inimigos com a mesma cor do seu destaque.
+				Pode gerar polui��o visual extra em algumas batalhas; ajuste conforme necess�rio.
+				'''
+		}
+
+		MaxHighlightSize: {
+			Label: Tamanho m�ximo do destaque
+			Tooltip: Proj�teis maiores que esse valor n�o ser�o destacados.
+		}
+
+		ParticleAutoBoss: {
+			Label: "[i:751] Auto: Reduzir part�culas"
+			Tooltip: Reduz part�culas somente quando um chefe est� ativo.
+		}
+
+		ProjectileFancyHighlighting: {
+			Label: Destaque avan�ado de proj�teis
+			Tooltip: ""
+		}
+
+		ProjectileHighlightMode: {
+			Label: Modo de destaque de proj�teis
+			Tooltip: ""
+		}
+
+		DrawCircles: {
+			Label: Desenhar c�rculos
+			Tooltip: Desenhar c�rculos de alerta ao redor dos proj�teis?
+		}
+
+		AutoHideWalls: {
+			Label: "[i:30] Auto: Ocultar paredes"
+			Tooltip:
+				'''
+				Interrompe automaticamente o desenho das paredes quando um chefe est� ativo.
+				Pode melhorar significativamente o FPS se houver muitas paredes pr�ximas.
+				'''
+		}
+
+		NoShaking: {
+			Label: "[i:5120] Desativar trepida��o da tela (vanilla)"
+			Tooltip:
+				'''
+				Desativa o efeito de �tremor de tela� usado pelo Deerclops e outros inimigos que utilizam esse sistema.
+				N�o afeta sistemas personalizados de mods, mas a maioria oferece uma op��o para desativ�-los.
+				'''
+		}
+	}
+
+	ProjectileHighlightMode: {
+		Tooltip: ""
+
+		None: {
+			Label: Nenhum
+			Tooltip: Nenhum efeito de destaque ser� usado.
+		}
+
+		Simple: {
+			Label: Simples
+			Tooltip: Tenta redesenhar o sprite do proj�til na cor selecionada em sua pr�pria camada.
+		}
+
+		Fancy: {
+			Label: Avan�ado
+			Tooltip: Usa um shader para iluminar o proj�til e adicionar um contorno.
+		}
+	}
+}

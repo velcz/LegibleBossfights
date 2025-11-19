@@ -1,0 +1,232 @@
+Keybinds: {
+	"Toggle Cursor Line.DisplayName": 切换光标指示线
+	"Toggle Projectile Highlights.DisplayName": 切换弹幕高亮
+	"Toggle Transparent Friendly Projectiles.DisplayName": 切换友方弹幕透明度
+	"Toggle Hide Walls.DisplayName": 切换隐藏墙壁
+}
+
+Messages: {
+	ShowLine: 光标指示线：{0}
+	ShowCircles: 敌方弹幕高亮：{0}
+	FadeProjectiles: 隐藏友方弹幕：{0}
+	HideWalls: 隐藏墙壁：{0}
+	On: 开启
+	Off: 关闭
+}
+
+Configs: {
+	LegibleBossfightsConfig: {
+		DisplayName: 客户端设置
+
+		TransparentFriendlyProjectiles: {
+			Label: "[i:170] 友方弹幕透明度"
+			Tooltip:
+				'''
+				按此数值降低所有友方弹幕的透明度。
+				0 = 正常显示，1 = 完全透明
+				[c/00ff00:部分弹幕特效不会受影响，请参考下一个设置。]
+				'''
+		}
+
+		LineThickness: {
+			Label: 线条厚度
+			Tooltip: ""
+		}
+
+		LineAlpha: {
+			Label: 透明度
+			Tooltip: ""
+		}
+
+		LineBorder: {
+			Label: 边框厚度
+			Tooltip: ""
+		}
+
+		LineColor: {
+			Label: 线条颜色
+			Tooltip: ""
+		}
+
+		OutlineColor: {
+			Label: 边框颜色
+			Tooltip: ""
+		}
+
+		Headers: {
+			headerDeclutter: "[i:2019] 画面精简设置"
+			headerLine: "[i:530] 光标指示线设置"
+			headerProjectiles: "[i:41] 敌方弹幕高亮设置"
+			headerAutomatic: "[i:43] 自动化 Boss 战斗切换"
+			headerMisc: "[i:1875] 其他设置"
+		}
+
+		ProjectileCircleSize: {
+			Label: 圆圈 - 高亮尺寸
+			Tooltip:
+				'''
+				出现在弹幕周围的圆圈缩放大小。
+				默认：1.8
+				'''
+		}
+
+		ProjectileCircleGrow: {
+			Label: 圆圈 - 警告增长
+			Tooltip:
+				'''
+				弹幕接近玩家时圆圈的放大倍率。
+				默认：1
+				'''
+		}
+
+		ProjectileCircleDistance: {
+			Label: 圆圈 - 高亮距离
+			Tooltip:
+				'''
+				在此距离内，高亮效果会逐渐显现。
+				默认：525
+				'''
+		}
+
+		ProjectileCircleWarningDistance: {
+			Label: 圆圈 - 警告距离
+			Tooltip:
+				'''
+				当弹幕靠近玩家到此距离时，圆圈开始变大。
+				默认：210
+				'''
+		}
+
+		ProjectileCircleMinAlpha: {
+			Label: 圆圈 - 最低透明度
+			Tooltip: 圆圈在超出范围时的透明度。
+		}
+
+		ProjectileCircleMaxAlpha: {
+			Label: 圆圈 - 最高透明度
+			Tooltip: 弹幕进入危险区域时圆圈的透明度。
+		}
+
+		TransparentAutoBoss: {
+			Label: "[i:2019] 自动透明友方弹幕"
+			Tooltip: 仅在 Boss 存在时隐藏友方弹幕。
+		}
+
+		ProjectileCircleAutoBoss: {
+			Label: "[i:41] 自动高亮敌方弹幕"
+			Tooltip: 在 Boss 战中自动启用/关闭敌方弹幕高亮。
+		}
+
+		LineAutoBoss: {
+			Label: "[i:530] 自动光标线"
+			Tooltip: 在 Boss 战中自动启用/关闭光标指示线。
+		}
+
+		ProjRingColor: {
+			Label: 高亮颜色
+			Tooltip: ""
+		}
+
+		DustReducerChance: {
+			Label: "[i:751] 粒子减负"
+			Tooltip:
+				'''
+				减少粒子/粉尘生成。
+				0 = 所有粒子，1 = 无粒子
+				[c/ff0000:不影响模组粒子（如 Calamity 弹幕特效）]
+				本设置与“自动隐藏友方弹幕”同步启用。
+				'''
+		}
+
+		SimplifyFriendlyProjectileDrawing: {
+			Label: "[i:949] 简化友方弹幕绘制"
+			Tooltip:
+				'''
+				移除大部分友方弹幕特效，仅绘制基础贴图。
+				若仅透明化不够，可使用此功能。
+				[c/ff0000:某些弹幕可能会显示异常或完全不显示。]
+				'''
+		}
+
+		OnlySimplifyOtherPlayersProjectiles: {
+			Label: "[i:75] 仅隐藏其他玩家弹幕"
+			Tooltip: 仅对其他玩家的弹幕应用以上效果。
+		}
+
+		ExcludePets: {
+			Label: "[i:5332] 排除宠物"
+			Tooltip: 开启 = 宠物仍会显示。
+		}
+
+		ProjectileRedrawSprite: {
+			Label: 高亮弹幕贴图
+			Tooltip:
+				'''
+				将敌方弹幕的贴图重绘为其高亮颜色。
+				在某些战斗中可能造成视觉杂乱，可按需开启。
+				'''
+		}
+
+		MaxHighlightSize: {
+			Label: 最大高亮尺寸
+			Tooltip: 超出此尺寸的弹幕不会被高亮显示。
+		}
+
+		ParticleAutoBoss: {
+			Label: "[i:751] 自动减少粒子"
+			Tooltip: 仅在 Boss 战期间减少粒子生成。
+		}
+
+		ProjectileFancyHighlighting: {
+			Label: 高级弹幕高亮
+			Tooltip: ""
+		}
+
+		ProjectileHighlightMode: {
+			Label: 弹幕高亮模式
+			Tooltip: ""
+		}
+
+		DrawCircles: {
+			Label: 绘制圆圈
+			Tooltip: 是否在弹幕周围绘制警示圆圈？
+		}
+
+		AutoHideWalls: {
+			Label: "[i:30] 自动隐藏墙壁"
+			Tooltip:
+				'''
+				Boss 存在时自动停止绘制墙壁。
+				如果附近有大量墙壁，可以显著提升帧数。
+				'''
+		}
+
+		NoShaking: {
+			Label: "[i:5120] 禁用原版屏幕震动"
+			Tooltip:
+				'''
+				禁用鹿角怪和其他使用此系统的敌人造成的屏幕震动。
+				不会影响模组震动系统，但大多数模组都有相应开关。
+				'''
+		}
+	}
+
+	ProjectileHighlightMode: {
+		Tooltip: ""
+
+		None: {
+			Label: 无
+			Tooltip: 不启用任何高亮效果。
+		}
+
+		Simple: {
+			Label: 简单
+			Tooltip: 简单地以选定颜色重绘弹幕贴图。
+		}
+
+		Fancy: {
+			Label: 高级
+			Tooltip: 使用着色器让弹幕变亮并添加轮廓效果。
+		}
+	}
+}

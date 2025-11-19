@@ -1,0 +1,232 @@
+Keybinds: {
+	"Toggle Cursor Line.DisplayName": Activer/désactiver la ligne du curseur
+	"Toggle Projectile Highlights.DisplayName": Activer/désactiver la mise en évidence des projectiles
+	"Toggle Transparent Friendly Projectiles.DisplayName": Activer/désactiver la transparence des projectiles alliés
+	"Toggle Hide Walls.DisplayName": Activer/désactiver le masquage des murs
+}
+
+Messages: {
+	ShowLine: Ligne du curseur : {0}
+	ShowCircles: Mise en évidence des projectiles ennemis : {0}
+	FadeProjectiles: Masquer les projectiles alliés : {0}
+	HideWalls: Masquer les murs : {0}
+	On: ACTIVÉ
+	Off: DÉSACTIVÉ
+}
+
+Configs: {
+	LegibleBossfightsConfig: {
+		DisplayName: Configuration client
+
+		TransparentFriendlyProjectiles: {
+			Label: "[i:170] Projectiles alliés transparents"
+			Tooltip:
+				'''
+				Réduit l’alpha (transparence) de tous les projectiles alliés de cette valeur.
+				0 = Affichage normal, 1 = Totalement transparent
+				[c/00ff00:Certains effets visuels de projectiles ne seront pas affectés. Référez-vous au paramètre suivant pour plus d’informations.]
+				'''
+		}
+
+		LineThickness: {
+			Label: Épaisseur de la ligne
+			Tooltip: ""
+		}
+
+		LineAlpha: {
+			Label: Alpha
+			Tooltip: ""
+		}
+
+		LineBorder: {
+			Label: Épaisseur du bord
+			Tooltip: ""
+		}
+
+		LineColor: {
+			Label: Couleur de la ligne
+			Tooltip: ""
+		}
+
+		OutlineColor: {
+			Label: Couleur du bord
+			Tooltip: ""
+		}
+
+		Headers: {
+			headerDeclutter: "[i:2019] Paramètres de nettoyage d’écran"
+			headerLine: "[i:530] Paramètres de la ligne du curseur"
+			headerProjectiles: "[i:41] Paramètres de mise en évidence des projectiles ennemis"
+			headerAutomatic: "[i:43] Commutateurs automatiques pour les combats de boss"
+			headerMisc: "[i:1875] Paramètres divers"
+		}
+
+		ProjectileCircleSize: {
+			Label: Cercle – Taille de l’indicateur
+			Tooltip:
+				'''
+				Taille du cercle apparaissant autour les projectiles.
+				Par défaut : 1.8
+				'''
+		}
+
+		ProjectileCircleGrow: {
+			Label: Cercle – Croissance d’avertissement
+			Tooltip:
+				'''
+				Contrôle la taille du cercle à mesure que le projectile s’approche du joueur.
+				Par défaut : 1
+				'''
+		}
+
+		ProjectileCircleDistance: {
+			Label: Cercle – Distance d’apparition
+			Tooltip:
+				'''
+				La mise en évidence commence à apparaître progressivement à cette distance.
+				Par défaut : 525
+				'''
+		}
+
+		ProjectileCircleWarningDistance: {
+			Label: Cercle – Distance d’avertissement
+			Tooltip:
+				'''
+				Distance à laquelle le cercle commence à grandir lorsque le projectile s’approche du joueur.
+				Par défaut : 210
+				'''
+		}
+
+		ProjectileCircleMinAlpha: {
+			Label: Cercle – Alpha minimum
+			Tooltip: Alpha des cercles qui sont hors de portée.
+		}
+
+		ProjectileCircleMaxAlpha: {
+			Label: Cercle – Alpha maximum
+			Tooltip: Alpha des cercles lorsque les projectiles sont dans la zone dangereuse du joueur.
+		}
+
+		TransparentAutoBoss: {
+			Label: "[i:2019] Auto : Projectiles alliés transparents"
+			Tooltip: Masque les projectiles alliés uniquement lorsqu’un boss est présent.
+		}
+
+		ProjectileCircleAutoBoss: {
+			Label: "[i:41] Auto : Mise en évidence des projectiles ennemis"
+			Tooltip: Active/désactive automatiquement la mise en évidence des projectiles ennemis durant un combat de boss.
+		}
+
+		LineAutoBoss: {
+			Label: "[i:530] Auto : Ligne du curseur"
+			Tooltip: Active/désactive automatiquement la ligne du curseur lorsqu’un boss est en vie.
+		}
+
+		ProjRingColor: {
+			Label: Couleur de l’indicateur
+			Tooltip: ""
+		}
+
+		DustReducerChance: {
+			Label: "[i:751] Réduction des particules"
+			Tooltip:
+				'''
+				Réduit l’apparition de particules/poussière.
+				0 = Toutes les particules, 1 = Aucune particule
+				[c/ff0000:N’affecte pas les particules ajoutées par les mods comme Calamity]
+				Ce paramètre est synchronisé avec “Auto : Masquer les projectiles alliés”.
+				'''
+		}
+
+		SimplifyFriendlyProjectileDrawing: {
+			Label: "[i:949] Simplifier l’affichage des projectiles alliés"
+			Tooltip:
+				'''
+				Retire la majorité des effets visuels des projectiles alliés et n’affiche que leur sprite de base.
+				Utile si la transparence ne suffit pas.
+				[c/ff0000:Cela peut entraîner des glitches ou empêcher certains projectiles d’apparaître.]
+				'''
+		}
+
+		OnlySimplifyOtherPlayersProjectiles: {
+			Label: "[i:75] Masquer uniquement les projectiles des autres joueurs"
+			Tooltip: N’applique les effets suivants qu’aux projectiles des autres joueurs.
+		}
+
+		ExcludePets: {
+			Label: "[i:5332] Exclure les familiers"
+			Tooltip: Activé = les familiers restent visibles.
+		}
+
+		ProjectileRedrawSprite: {
+			Label: Redessiner le sprite du projectile
+			Tooltip:
+				'''
+				Redessine le sprite des projectiles ennemis dans la même couleur que leur indicateur.
+				Ceci peut ajouter du bruit visuel pendant certains combats.
+				'''
+		}
+
+		MaxHighlightSize: {
+			Label: Taille maximale de l’indicateur
+			Tooltip: Les projectiles dépassant cette taille ne seront pas mis en évidence.
+		}
+
+		ParticleAutoBoss: {
+			Label: "[i:751] Auto : Réduire les particules"
+			Tooltip: Réduit les particules uniquement lorsqu’un boss est actif.
+		}
+
+		ProjectileFancyHighlighting: {
+			Label: Mise en évidence avancée des projectiles
+			Tooltip: ""
+		}
+
+		ProjectileHighlightMode: {
+			Label: Mode de mise en évidence des projectiles
+			Tooltip: ""
+		}
+
+		DrawCircles: {
+			Label: Afficher les cercles
+			Tooltip: Faut-il afficher des cercles d’avertissement autour des projectiles ?
+		}
+
+		AutoHideWalls: {
+			Label: "[i:30] Auto : Masquer les murs"
+			Tooltip:
+				'''
+				Arrête automatiquement l’affichage des murs lorsqu’un boss est présent.
+				Peut améliorer significativement les FPS si beaucoup de murs sont proches.
+				'''
+		}
+
+		NoShaking: {
+			Label: "[i:5120] Désactiver le tremblement d’écran vanilla"
+			Tooltip:
+				'''
+				Désactive l’effet de “coup d’écran” utilisé par le Cerfclops et d’autres ennemis.
+				N’affecte pas les systèmes personnalisés ajoutés par les mods, mais la plupart disposent de leurs propres options.
+				'''
+		}
+	}
+
+	ProjectileHighlightMode: {
+		Tooltip: ""
+
+		None: {
+			Label: Aucun
+			Tooltip: Aucun effet de mise en évidence ne sera utilisé.
+		}
+
+		Simple: {
+			Label: Simple
+			Tooltip: Tente simplement de redessiner le sprite du projectile dans la couleur choisie, sur sa propre couche.
+		}
+
+		Fancy: {
+			Label: Avancé
+			Tooltip: Utilise un shader pour éclaircir le projectile et lui appliquer un contour.
+		}
+	}
+}

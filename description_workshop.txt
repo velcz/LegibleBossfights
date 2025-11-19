@@ -1,4 +1,4 @@
-[h3]A lightweight mod that attempts to make it easier to see whats going on during bossfights, ESPECIALLY in multiplayer.[/h3]
+﻿[h3]A lightweight mod that attempts to make it easier to see whats going on during bossfights, ESPECIALLY in multiplayer.[/h3]
 
 Also if you constantly lose your cursor in the middle of fights (I know you do), this is for you <3
 
@@ -13,13 +13,17 @@ This mod can:
 [*]Disable vanilla screen shake effects.
 [/list]
 
-All features can be set individually to only turn on during bossfights, and can be toggled by keybinds at any time.
+All features can be set individually to only turn on during bossfights (on by default), and can be toggled by keybinds at any time.
 
 Pretty much every part of this mod can be adjusted to your liking.
 
 [u]Please report any issues to github, or open a discussion on this page. Also open to any ideas for improvements.[/u]
 
+(Translated page on github // Переведённая страница доступна здесь // 翻译页面在此处查看 // La page traduite est disponible ici // Die übersetzte Seite ist hier verfügbar // La pagina tradotta è disponibile qui // La página traducida está disponible aquí // A página traduzida está disponível aqui // Przetłumaczona strona jest dostępna tutaj)
 https://github.com/velcz/LegibleBossfights
+
+V1.1.2:
+-Added localization files for all in-game languages via a translator app.
 
 V1.1.1:
 -Added option to disable vanilla screen shake effects.

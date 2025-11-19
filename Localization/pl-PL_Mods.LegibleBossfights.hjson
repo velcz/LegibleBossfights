@@ -1,0 +1,232 @@
+﻿Keybinds: {
+	"Toggle Cursor Line.DisplayName": Przełącz linię kursora
+	"Toggle Projectile Highlights.DisplayName": Przełącz podświetlanie pocisków
+	"Toggle Transparent Friendly Projectiles.DisplayName": Przełącz przezroczyste sojusznicze pociski
+	"Toggle Hide Walls.DisplayName": Przełącz ukrywanie ścian
+}
+
+Messages: {
+	ShowLine: Linia kursora: {0}
+	ShowCircles: Podświetlanie wrogich pocisków: {0}
+	FadeProjectiles: Ukryj sojusznicze pociski: {0}
+	HideWalls: Ukryj ściany: {0}
+	On: WŁ.
+	Off: WYŁ.
+}
+
+Configs: {
+	LegibleBossfightsConfig: {
+		DisplayName: Konfiguracja klienta
+
+		TransparentFriendlyProjectiles: {
+			Label: "[i:170] Przezroczyste sojusznicze pociski"
+			Tooltip:
+				'''
+				Zmniejsza alpha (przezroczystość) wszystkich sojuszniczych pocisków o tę wartość.
+				0 = Rysowane normalnie, 1 = Całkowicie przezroczyste
+				[c/00ff00:Niektóre efekty pocisków nie będą tym objęte. Zobacz kolejne ustawienie po więcej informacji.]
+				'''
+		}
+
+		LineThickness: {
+			Label: Grubość linii
+			Tooltip: ""
+		}
+
+		LineAlpha: {
+			Label: Alpha
+			Tooltip: ""
+		}
+
+		LineBorder: {
+			Label: Grubość obramowania
+			Tooltip: ""
+		}
+
+		LineColor: {
+			Label: Kolor linii
+			Tooltip: ""
+		}
+
+		OutlineColor: {
+			Label: Kolor obramowania
+			Tooltip: ""
+		}
+
+		Headers: {
+			headerDeclutter: "[i:2019] Ustawienia przejrzystości ekranu"
+			headerLine: "[i:530] Ustawienia linii kursora"
+			headerProjectiles: "[i:41] Ustawienia podświetlania wrogich pocisków"
+			headerAutomatic: "[i:43] Automatyczne przełączniki podczas walk z bossami"
+			headerMisc: "[i:1875] Różne ustawienia"
+		}
+
+		ProjectileCircleSize: {
+			Label: Okrąg – Rozmiar podświetlenia
+			Tooltip:
+				'''
+				Skalowanie okręgu pojawiającego się wokół pocisków.
+				Domyślnie: 1.8
+				'''
+		}
+
+		ProjectileCircleGrow: {
+			Label: Okrąg – Wzrost ostrzegawczy
+			Tooltip:
+				'''
+				Określa, jak bardzo okrąg rośnie, gdy pocisk zbliża się do gracza.
+				Domyślnie: 1
+				'''
+		}
+
+		ProjectileCircleDistance: {
+			Label: Okrąg – Zasięg podświetlenia
+			Tooltip:
+				'''
+				Podświetlenie zacznie się stopniowo pojawiać w tym zasięgu.
+				Domyślnie: 525
+				'''
+		}
+
+		ProjectileCircleWarningDistance: {
+			Label: Okrąg – Zasięg ostrzegawczy
+			Tooltip:
+				'''
+				Odległość, przy której okrąg zacznie się powiększać, gdy pocisk zbliży się do gracza.
+				Domyślnie: 210
+				'''
+		}
+
+		ProjectileCircleMinAlpha: {
+			Label: Okrąg – Minimalna alpha
+			Tooltip: Alpha okręgów poza zasięgiem.
+		}
+
+		ProjectileCircleMaxAlpha: {
+			Label: Okrąg – Maksymalna alpha
+			Tooltip: Alpha okręgów, gdy są w strefie niebezpieczeństwa gracza.
+		}
+
+		TransparentAutoBoss: {
+			Label: "[i:2019] Auto: Przezroczyste sojusznicze pociski"
+			Tooltip: Ukrywa sojusznicze pociski tylko podczas walki z bossem.
+		}
+
+		ProjectileCircleAutoBoss: {
+			Label: "[i:41] Auto: Podświetlanie wrogich pocisków"
+			Tooltip: Automatycznie włącza/wyłącza podświetlanie wrogich pocisków podczas walk z bossami.
+		}
+
+		LineAutoBoss: {
+			Label: "[i:530] Auto: Linia kursora"
+			Tooltip: Automatycznie włącza/wyłącza linię kursora, gdy boss jest aktywny.
+		}
+
+		ProjRingColor: {
+			Label: Kolor podświetlenia
+			Tooltip: ""
+		}
+
+		DustReducerChance: {
+			Label: "[i:751] Redukcja cząsteczek"
+			Tooltip:
+				'''
+				Redukuje generowanie cząsteczek/pyłu.
+				0 = Wszystkie cząsteczki, 1 = Zero cząsteczek
+				[c/ff0000:Nie wpływa na cząsteczki z modów, np. Calamity]
+				To ustawienie działa razem z „Auto: Ukryj sojusznicze pociski”.
+				'''
+		}
+
+		SimplifyFriendlyProjectileDrawing: {
+			Label: "[i:949] Uprość rysowanie sojuszniczych pocisków"
+			Tooltip:
+				'''
+				Usuwa większość efektów wizualnych z sojuszniczych pocisków i rysuje jedynie podstawowy sprite.
+				Używaj, jeśli sama przezroczystość nie wystarcza.
+				[c/ff0000:Może powodować błędy wizualne lub brak wyświetlania niektórych pocisków.]
+				'''
+		}
+
+		OnlySimplifyOtherPlayersProjectiles: {
+			Label: "[i:75] Ukrywaj tylko pociski innych graczy"
+			Tooltip: Stosuje poniższe efekty tylko do pocisków innych graczy.
+		}
+
+		ExcludePets: {
+			Label: "[i:5332] Wyklucz towarzyszy (pets)"
+			Tooltip: Wł. = Towarzysze nadal będą widoczni.
+		}
+
+		ProjectileRedrawSprite: {
+			Label: Podświetl sprite pocisku
+			Tooltip:
+				'''
+				Narysowuje sprite wrogich pocisków ponownie w kolorze ich podświetlenia.
+				Może powodować dodatkowy chaos wizualny w niektórych walkach.
+				'''
+		}
+
+		MaxHighlightSize: {
+			Label: Maksymalny rozmiar podświetlenia
+			Tooltip: Pociski większe niż ten rozmiar nie zostaną podświetlone.
+		}
+
+		ParticleAutoBoss: {
+			Label: "[i:751] Auto: Redukcja cząsteczek"
+			Tooltip: Redukuje cząsteczki tylko wtedy, gdy boss jest aktywny.
+		}
+
+		ProjectileFancyHighlighting: {
+			Label: Zaawansowane podświetlanie pocisków
+			Tooltip: ""
+		}
+
+		ProjectileHighlightMode: {
+			Label: Tryb podświetlania pocisków
+			Tooltip: ""
+		}
+
+		DrawCircles: {
+			Label: Rysuj okręgi
+			Tooltip: Czy rysować okręgi ostrzegawcze wokół pocisku?
+		}
+
+		AutoHideWalls: {
+			Label: "[i:30] Auto: Ukryj ściany"
+			Tooltip:
+				'''
+				Automatycznie zatrzymuje rysowanie ścian, gdy boss jest aktywny.
+				Może znacząco poprawić FPS, jeśli w pobliżu jest wiele ścian.
+				'''
+		}
+
+		NoShaking: {
+			Label: "[i:5120] Wyłącz drgania ekranu (vanilla)"
+			Tooltip:
+				'''
+				Zatrzymuje efekt „uderzenia ekranu” używany przez Deerclops oraz innych wrogów korzystających z tego systemu.
+				Nie wpływa na systemy dodane przez mody, ale większość z nich ma własne ustawienia do wyłączenia efektu.
+				'''
+		}
+	}
+
+	ProjectileHighlightMode: {
+		Tooltip: ""
+
+		None: {
+			Label: Brak
+			Tooltip: Żadne efekty podświetlania nie będą używane.
+		}
+
+		Simple: {
+			Label: Prosty
+			Tooltip: Próbuję po prostu narysować sprite pocisku w wybranym kolorze na jego własnej warstwie.
+		}
+
+		Fancy: {
+			Label: Zaawansowany
+			Tooltip: Używa podejścia shaderowego, aby rozjaśnić pocisk i narysować wokół niego obrys.
+		}
+	}
+}

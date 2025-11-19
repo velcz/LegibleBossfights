@@ -1,0 +1,232 @@
+Keybinds: {
+	"Toggle Cursor Line.DisplayName": Alternar línea del cursor
+	"Toggle Projectile Highlights.DisplayName": Alternar resaltado de proyectiles
+	"Toggle Transparent Friendly Projectiles.DisplayName": Alternar proyectiles aliados transparentes
+	"Toggle Hide Walls.DisplayName": Alternar ocultar muros
+}
+
+Messages: {
+	ShowLine: Línea del cursor: {0}
+	ShowCircles: Resaltado de proyectiles enemigos: {0}
+	FadeProjectiles: Ocultar proyectiles aliados: {0}
+	HideWalls: Ocultar muros: {0}
+	On: ACTIVADO
+	Off: DESACTIVADO
+}
+
+Configs: {
+	LegibleBossfightsConfig: {
+		DisplayName: Configuración del cliente
+
+		TransparentFriendlyProjectiles: {
+			Label: "[i:170] Proyectiles aliados transparentes"
+			Tooltip:
+				'''
+				Reduce la alpha (transparencia) de todos los proyectiles aliados por esta cantidad.
+				0 = Se dibuja normalmente, 1 = Completamente transparente
+				[c/00ff00:Ciertos efectos de proyectiles no se verán afectados. Consulta la siguiente configuración para más detalles.]
+				'''
+		}
+
+		LineThickness: {
+			Label: Grosor de la línea
+			Tooltip: ""
+		}
+
+		LineAlpha: {
+			Label: Alpha
+			Tooltip: ""
+		}
+
+		LineBorder: {
+			Label: Grosor del borde
+			Tooltip: ""
+		}
+
+		LineColor: {
+			Label: Color de la línea
+			Tooltip: ""
+		}
+
+		OutlineColor: {
+			Label: Color del borde
+			Tooltip: ""
+		}
+
+		Headers: {
+			headerDeclutter: "[i:2019] Ajustes de limpieza visual"
+			headerLine: "[i:530] Ajustes de la línea del cursor"
+			headerProjectiles: "[i:41] Ajustes de resaltado de proyectiles enemigos"
+			headerAutomatic: "[i:43] Conmutadores automáticos al aparecer un jefe"
+			headerMisc: "[i:1875] Ajustes varios"
+		}
+
+		ProjectileCircleSize: {
+			Label: Círculo – Tamaño del resaltado
+			Tooltip:
+				'''
+				Tamaño del círculo que aparece alrededor de los proyectiles.
+				Predeterminado: 1.8
+				'''
+		}
+
+		ProjectileCircleGrow: {
+			Label: Círculo – Crecimiento de advertencia
+			Tooltip:
+				'''
+				Ajusta cuánto crecerá el círculo a medida que el proyectil se acerque al jugador.
+				Predeterminado: 1
+				'''
+		}
+
+		ProjectileCircleDistance: {
+			Label: Círculo – Distancia de resaltado
+			Tooltip:
+				'''
+				El resaltado empezará a aparecer gradualmente a esta distancia.
+				Predeterminado: 525
+				'''
+		}
+
+		ProjectileCircleWarningDistance: {
+			Label: Círculo – Distancia de advertencia
+			Tooltip:
+				'''
+				La distancia a la que el círculo comenzará a crecer cuando el proyectil esté cerca del jugador.
+				Predeterminado: 210
+				'''
+		}
+
+		ProjectileCircleMinAlpha: {
+			Label: Círculo – Alpha mínimo
+			Tooltip: Alpha de los círculos que están fuera del rango.
+		}
+
+		ProjectileCircleMaxAlpha: {
+			Label: Círculo – Alpha máximo
+			Tooltip: Alpha de los círculos cuando están en la zona de peligro del jugador.
+		}
+
+		TransparentAutoBoss: {
+			Label: "[i:2019] Auto: Proyectiles aliados transparentes"
+			Tooltip: Solo oculta los proyectiles aliados cuando hay un jefe activo.
+		}
+
+		ProjectileCircleAutoBoss: {
+			Label: "[i:41] Auto: Resaltado de proyectiles enemigos"
+			Tooltip: Activa/desactiva automáticamente el resaltado de proyectiles enemigos durante combates contra jefes.
+		}
+
+		LineAutoBoss: {
+			Label: "[i:530] Auto: Línea del cursor"
+			Tooltip: Activa/desactiva automáticamente la línea del cursor cuando hay un jefe.
+		}
+
+		ProjRingColor: {
+			Label: Color del resaltado
+			Tooltip: ""
+		}
+
+		DustReducerChance: {
+			Label: "[i:751] Reducción de partículas"
+			Tooltip:
+				'''
+				Reduce la aparición de partículas/polvo.
+				0 = Todas las partículas, 1 = Sin partículas
+				[c/ff0000:No afecta partículas añadidas por mods como Calamity]
+				Esta configuración se activa junto con “Auto: Ocultar proyectiles aliados”.
+				'''
+		}
+
+		SimplifyFriendlyProjectileDrawing: {
+			Label: "[i:949] Simplificar proyección de proyectiles aliados"
+			Tooltip:
+				'''
+				Elimina la mayoría de efectos visuales de los proyectiles aliados y solo dibuja su sprite base.
+				Úsalo si la transparencia por sí sola no es suficiente.
+				[c/ff0000:Puede causar errores visuales o que algunos proyectiles no se dibujen.]
+				'''
+		}
+
+		OnlySimplifyOtherPlayersProjectiles: {
+			Label: "[i:75] Ocultar solo proyectiles de otros jugadores"
+			Tooltip: Aplica los siguientes efectos solo a los proyectiles de otros jugadores.
+		}
+
+		ExcludePets: {
+			Label: "[i:5332] Excluir mascotas"
+			Tooltip: Activado = Las mascotas seguirán visibles.
+		}
+
+		ProjectileRedrawSprite: {
+			Label: Redibujar sprite del proyectil
+			Tooltip:
+				'''
+				Redibuja el sprite de los proyectiles enemigos con el mismo color que su resaltado.
+				Puede generar saturación visual en ciertos combates; ajusta según lo necesites.
+				'''
+		}
+
+		MaxHighlightSize: {
+			Label: Tamaño máximo de resaltado
+			Tooltip: Los proyectiles más grandes que este valor no serán resaltados.
+		}
+
+		ParticleAutoBoss: {
+			Label: "[i:751] Auto: Reducir partículas"
+			Tooltip: Reduce partículas únicamente cuando hay un jefe activo.
+		}
+
+		ProjectileFancyHighlighting: {
+			Label: Resaltado avanzado de proyectiles
+			Tooltip: ""
+		}
+
+		ProjectileHighlightMode: {
+			Label: Modo de resaltado de proyectiles
+			Tooltip: ""
+		}
+
+		DrawCircles: {
+			Label: Dibujar círculos
+			Tooltip: ¿Dibujar círculos de advertencia alrededor de los proyectiles?
+		}
+
+		AutoHideWalls: {
+			Label: "[i:30] Auto: Ocultar muros"
+			Tooltip:
+				'''
+				Detiene automáticamente el dibujo de los muros cuando hay un jefe activo.
+				Puede mejorar significativamente los FPS si hay muchos muros cerca.
+				'''
+		}
+
+		NoShaking: {
+			Label: "[i:5120] Desactivar sacudida de pantalla vanilla"
+			Tooltip:
+				'''
+				Detiene el efecto de “golpe de pantalla” usado por Deerclops y otros enemigos que usan este sistema.
+				No afecta sistemas personalizados de mods, aunque la mayoría ofrece una opción para desactivarlo.
+				'''
+		}
+	}
+
+	ProjectileHighlightMode: {
+		Tooltip: ""
+
+		None: {
+			Label: Ninguno
+			Tooltip: No se usarán efectos de resaltado.
+		}
+
+		Simple: {
+			Label: Simple
+			Tooltip: Intenta redibujar el sprite del proyectil en el color seleccionado en su propia capa.
+		}
+
+		Fancy: {
+			Label: Avanzado
+			Tooltip: Usa un método basado en shaders para iluminar el proyectil y agregar un contorno.
+		}
+	}
+}

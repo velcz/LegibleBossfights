@@ -1,0 +1,232 @@
+Keybinds: {
+	"Toggle Cursor Line.DisplayName": Attiva/disattiva linea del cursore
+	"Toggle Projectile Highlights.DisplayName": Attiva/disattiva evidenziazione proiettili
+	"Toggle Transparent Friendly Projectiles.DisplayName": Attiva/disattiva proiettili amichevoli trasparenti
+	"Toggle Hide Walls.DisplayName": Attiva/disattiva nascondi muri
+}
+
+Messages: {
+	ShowLine: Linea del cursore: {0}
+	ShowCircles: Evidenziazione proiettili nemici: {0}
+	FadeProjectiles: Nascondi proiettili amichevoli: {0}
+	HideWalls: Nascondi muri: {0}
+	On: ON
+	Off: OFF
+}
+
+Configs: {
+	LegibleBossfightsConfig: {
+		DisplayName: Impostazioni client
+
+		TransparentFriendlyProjectiles: {
+			Label: "[i:170] Proiettili amichevoli trasparenti"
+			Tooltip:
+				'''
+				Riduce l’alpha (trasparenza) di tutti i proiettili amichevoli di questa quantità.
+				0 = Disegnato normalmente, 1 = Completamente trasparente
+				[c/00ff00:Alcuni effetti visivi dei proiettili non saranno influenzati. Consulta l’impostazione successiva per maggiori dettagli.]
+				'''
+		}
+
+		LineThickness: {
+			Label: Spessore linea
+			Tooltip: ""
+		}
+
+		LineAlpha: {
+			Label: Alpha
+			Tooltip: ""
+		}
+
+		LineBorder: {
+			Label: Spessore bordo
+			Tooltip: ""
+		}
+
+		LineColor: {
+			Label: Colore linea
+			Tooltip: ""
+		}
+
+		OutlineColor: {
+			Label: Colore bordo
+			Tooltip: ""
+		}
+
+		Headers: {
+			headerDeclutter: "[i:2019] Impostazioni pulizia schermo"
+			headerLine: "[i:530] Impostazioni linea del cursore"
+			headerProjectiles: "[i:41] Impostazioni evidenziazione proiettili nemici"
+			headerAutomatic: "[i:43] Attivazioni automatiche in presenza di boss"
+			headerMisc: "[i:1875] Impostazioni varie"
+		}
+
+		ProjectileCircleSize: {
+			Label: Cerchio – Dimensione evidenziazione
+			Tooltip:
+				'''
+				La dimensione del cerchio che appare attorno ai proiettili.
+				Predefinito: 1.8
+				'''
+		}
+
+		ProjectileCircleGrow: {
+			Label: Cerchio – Crescita d’allerta
+			Tooltip:
+				'''
+				Determina quanto il cerchio cresce man mano che il proiettile si avvicina al giocatore.
+				Predefinito: 1
+				'''
+		}
+
+		ProjectileCircleDistance: {
+			Label: Cerchio – Distanza di evidenziazione
+			Tooltip:
+				'''
+				L’evidenziazione inizierà a comparire gradualmente a questa distanza.
+				Predefinito: 525
+				'''
+		}
+
+		ProjectileCircleWarningDistance: {
+			Label: Cerchio – Distanza d’allerta
+			Tooltip:
+				'''
+				La distanza alla quale il cerchio inizia a crescere quando il proiettile è vicino al giocatore.
+				Predefinito: 210
+				'''
+		}
+
+		ProjectileCircleMinAlpha: {
+			Label: Cerchio – Alpha minimo
+			Tooltip: Alpha dei cerchi fuori portata.
+		}
+
+		ProjectileCircleMaxAlpha: {
+			Label: Cerchio – Alpha massimo
+			Tooltip: Alpha dei cerchi quando si trovano nella zona di pericolo del giocatore.
+		}
+
+		TransparentAutoBoss: {
+			Label: "[i:2019] Auto: Proiettili amichevoli trasparenti"
+			Tooltip: Nasconde i proiettili amichevoli solo quando un boss è presente.
+		}
+
+		ProjectileCircleAutoBoss: {
+			Label: "[i:41] Auto: Evidenziazione proiettili nemici"
+			Tooltip: Attiva/disattiva automaticamente l’evidenziazione dei proiettili nemici durante i combattimenti con boss.
+		}
+
+		LineAutoBoss: {
+			Label: "[i:530] Auto: Linea del cursore"
+			Tooltip: Attiva/disattiva automaticamente la linea del cursore quando i boss sono vivi.
+		}
+
+		ProjRingColor: {
+			Label: Colore evidenziazione
+			Tooltip: ""
+		}
+
+		DustReducerChance: {
+			Label: "[i:751] Riduzione particelle"
+			Tooltip:
+				'''
+				Riduce la quantità di particelle/polvere generate.
+				0 = Tutte le particelle, 1 = Nessuna particella
+				[c/ff0000:Non influenza particelle moddate come quelle di Calamity]
+				Questa impostazione si attiva insieme a “Auto: Proiettili amichevoli trasparenti”.
+				'''
+		}
+
+		SimplifyFriendlyProjectileDrawing: {
+			Label: "[i:949] Semplifica proiettili amichevoli"
+			Tooltip:
+				'''
+				Rimuove la maggior parte degli effetti visivi dai proiettili amichevoli e disegna solo lo sprite base.
+				Usalo se la sola trasparenza non è sufficiente.
+				[c/ff0000:Potrebbe causare errori visivi o la mancata visualizzazione di alcuni proiettili.]
+				'''
+		}
+
+		OnlySimplifyOtherPlayersProjectiles: {
+			Label: "[i:75] Nascondi solo proiettili degli altri giocatori"
+			Tooltip: Applica gli effetti seguenti solo ai proiettili degli altri giocatori.
+		}
+
+		ExcludePets: {
+			Label: "[i:5332] Escludi i pet"
+			Tooltip: On = I pet rimarranno visibili.
+		}
+
+		ProjectileRedrawSprite: {
+			Label: Evidenzia sprite proiettile
+			Tooltip:
+				'''
+				Ridisegna lo sprite dei proiettili nemici nel colore della loro evidenziazione.
+				Può aggiungere ulteriore confusione visiva in alcuni combattimenti.
+				'''
+		}
+
+		MaxHighlightSize: {
+			Label: Dimensione massima evidenziazione
+			Tooltip: I proiettili più grandi di questa dimensione non verranno evidenziati.
+		}
+
+		ParticleAutoBoss: {
+			Label: "[i:751] Auto: Riduci particelle"
+			Tooltip: Riduce le particelle solo quando i boss sono presenti.
+		}
+
+		ProjectileFancyHighlighting: {
+			Label: Evidenziazione proiettili avanzata
+			Tooltip: ""
+		}
+
+		ProjectileHighlightMode: {
+			Label: Modalità evidenziazione proiettili
+			Tooltip: ""
+		}
+
+		DrawCircles: {
+			Label: Disegna cerchi
+			Tooltip: Disegnare cerchi d’allerta attorno ai proiettili?
+		}
+
+		AutoHideWalls: {
+			Label: "[i:30] Auto: Nascondi muri"
+			Tooltip:
+				'''
+				Interrompe automaticamente il disegno dei muri quando un boss è presente.
+				Può migliorare notevolmente gli FPS se ci sono molti muri nelle vicinanze.
+				'''
+		}
+
+		NoShaking: {
+			Label: "[i:5120] Disattiva scuotimento schermo vanilla"
+			Tooltip:
+				'''
+				Disattiva l’effetto di “schermo colpito” usato da Deerclops e altri nemici che utilizzano questo sistema.
+				Non influenza i sistemi modded, ma la maggior parte delle mod ha la propria impostazione per disattivarli.
+				'''
+		}
+	}
+
+	ProjectileHighlightMode: {
+		Tooltip: ""
+
+		None: {
+			Label: Nessuno
+			Tooltip: Nessun effetto di evidenziazione verrà utilizzato.
+		}
+
+		Simple: {
+			Label: Semplice
+			Tooltip: Tenta semplicemente di ridisegnare lo sprite del proiettile nel colore scelto, su un livello dedicato.
+		}
+
+		Fancy: {
+			Label: Avanzato
+			Tooltip: Usa un approccio basato su shader per schiarire il proiettile e applicare un contorno.
+		}
+	}
+}

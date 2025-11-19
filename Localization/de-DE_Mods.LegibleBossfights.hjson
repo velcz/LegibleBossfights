@@ -1,0 +1,232 @@
+Keybinds: {
+	"Toggle Cursor Line.DisplayName": Cursorlinie umschalten
+	"Toggle Projectile Highlights.DisplayName": Projektil-Hervorhebung umschalten
+	"Toggle Transparent Friendly Projectiles.DisplayName": Transparente verbündete Projektile umschalten
+	"Toggle Hide Walls.DisplayName": Wände ausblenden umschalten
+}
+
+Messages: {
+	ShowLine: Cursorlinie: {0}
+	ShowCircles: Gegnerische Projektil-Hervorhebung: {0}
+	FadeProjectiles: Verbündete Projektile ausblenden: {0}
+	HideWalls: Wände ausblenden: {0}
+	On: EIN
+	Off: AUS
+}
+
+Configs: {
+	LegibleBossfightsConfig: {
+		DisplayName: Client-Einstellungen
+
+		TransparentFriendlyProjectiles: {
+			Label: "[i:170] Transparente verbündete Projektile"
+			Tooltip:
+				'''
+				Verringert die Alpha (Transparenz) aller verbündeten Projektile um diesen Wert.
+				0 = Normal gezeichnet, 1 = Vollständig transparent
+				[c/00ff00:Bestimmte Projektil-Effekte werden hiervon nicht betroffen. Siehe die folgende Einstellung für mehr Informationen.]
+				'''
+		}
+
+		LineThickness: {
+			Label: Linienbreite
+			Tooltip: ""
+		}
+
+		LineAlpha: {
+			Label: Alpha
+			Tooltip: ""
+		}
+
+		LineBorder: {
+			Label: Rahmenbreite
+			Tooltip: ""
+		}
+
+		LineColor: {
+			Label: Linienfarbe
+			Tooltip: ""
+		}
+
+		OutlineColor: {
+			Label: Rahmenfarbe
+			Tooltip: ""
+		}
+
+		Headers: {
+			headerDeclutter: "[i:2019] Bildschirmbereinigungs-Einstellungen"
+			headerLine: "[i:530] Cursorlinien-Einstellungen"
+			headerProjectiles: "[i:41] Gegnerische Projektil-Hervorhebungen"
+			headerAutomatic: "[i:43] Automatische Boss-Aktivierungs-Umschalter"
+			headerMisc: "[i:1875] Verschiedene Einstellungen"
+		}
+
+		ProjectileCircleSize: {
+			Label: Kreis – Hervorhebungsgröße
+			Tooltip:
+				'''
+				Bestimmt die Größe des Kreises, der um Projektile erscheint.
+				Standard: 1.8
+				'''
+		}
+
+		ProjectileCircleGrow: {
+			Label: Kreis – Warnwachstum
+			Tooltip:
+				'''
+				Bestimmt, wie stark der Kreis wächst, wenn sich ein Projektil dem Spieler nähert.
+				Standard: 1
+				'''
+		}
+
+		ProjectileCircleDistance: {
+			Label: Kreis – Hervorhebungsdistanz
+			Tooltip:
+				'''
+				In dieser Entfernung beginnt die Hervorhebung langsam einzublenden.
+				Standard: 525
+				'''
+		}
+
+		ProjectileCircleWarningDistance: {
+			Label: Kreis – Warndistanz
+			Tooltip:
+				'''
+				Die Entfernung, bei der der Kreis beginnt zu wachsen, wenn sich das Projektil nähert.
+				Standard: 210
+				'''
+		}
+
+		ProjectileCircleMinAlpha: {
+			Label: Kreis – minimale Alpha
+			Tooltip: Alpha von Kreisen, die außerhalb des Bereichs sind.
+		}
+
+		ProjectileCircleMaxAlpha: {
+			Label: Kreis – maximale Alpha
+			Tooltip: Alpha von Kreisen, wenn sich das Projektil in der Gefahrenzone des Spielers befindet.
+		}
+
+		TransparentAutoBoss: {
+			Label: "[i:2019] Auto: Transparente verbündete Projektile"
+			Tooltip: Blendet verbündete Projektile nur aus, wenn Bosse aktiv sind.
+		}
+
+		ProjectileCircleAutoBoss: {
+			Label: "[i:41] Auto: Gegnerische Projektil-Hervorhebung"
+			Tooltip: Aktiviert/deaktiviert automatisch die Hervorhebung gegnerischer Projektile, wenn Bosse aktiv sind.
+		}
+
+		LineAutoBoss: {
+			Label: "[i:530] Auto: Cursorlinie"
+			Tooltip: Aktiviert/deaktiviert automatisch die Cursorlinie, wenn Bosse aktiv sind.
+		}
+
+		ProjRingColor: {
+			Label: Hervorhebungsfarbe
+			Tooltip: ""
+		}
+
+		DustReducerChance: {
+			Label: "[i:751] Partikelreduzierung"
+			Tooltip:
+				'''
+				Reduziert die Anzahl der entstehenden Partikel/Staub.
+				0 = Alle Partikel, 1 = Keine Partikel
+				[c/ff0000:Beeinflusst keine Mod-Partikel wie z.B. Calamity-Effekte]
+				Diese Einstellung wird gemeinsam mit „Auto: Verbündete Projektile ausblenden“ aktiviert.
+				'''
+		}
+
+		SimplifyFriendlyProjectileDrawing: {
+			Label: "[i:949] Zeichnung verbündeter Projektile vereinfachen"
+			Tooltip:
+				'''
+				Entfernt die meisten visuellen Effekte von verbündeten Projektilen und zeichnet nur deren Basissprite.
+				Nützlich, wenn die Transparenz-Einstellung allein nicht genügt.
+				[c/ff0000:Kann dazu führen, dass einige Projektile fehlerhaft aussehen oder gar nicht gezeichnet werden.]
+				'''
+		}
+
+		OnlySimplifyOtherPlayersProjectiles: {
+			Label: "[i:75] Nur Projektile anderer Spieler verbergen"
+			Tooltip: Wendet die folgenden Effekte nur auf Projektile anderer Spieler an.
+		}
+
+		ExcludePets: {
+			Label: "[i:5332] Haustiere ausnehmen"
+			Tooltip: Ein = Haustiere werden weiterhin angezeigt.
+		}
+
+		ProjectileRedrawSprite: {
+			Label: Projektilsprite hervorheben
+			Tooltip:
+				'''
+				Zeichnet gegnerische Projektil-Sprites in der gewählten Hervorhebungsfarbe neu.
+				Kann in manchen Kämpfen zu zusätzlichem visuellen Durcheinander führen.
+				'''
+		}
+
+		MaxHighlightSize: {
+			Label: Maximale Hervorhebungsgröße
+			Tooltip: Projektile größer als dieser Wert werden nicht hervorgehoben.
+		}
+
+		ParticleAutoBoss: {
+			Label: "[i:751] Auto: Partikelreduzierung"
+			Tooltip: Reduziert Partikel nur, wenn Bosse aktiv sind.
+		}
+
+		ProjectileFancyHighlighting: {
+			Label: Aufwendige Projektil-Hervorhebung
+			Tooltip: ""
+		}
+
+		ProjectileHighlightMode: {
+			Label: Projektil-Hervorhebungsmodus
+			Tooltip: ""
+		}
+
+		DrawCircles: {
+			Label: Kreise zeichnen
+			Tooltip: Sollen Warnkreise um Projektile gezeichnet werden?
+		}
+
+		AutoHideWalls: {
+			Label: "[i:30] Auto: Wände ausblenden"
+			Tooltip:
+				'''
+				Stoppt automatisch das Zeichnen von Wänden, wenn Bosse aktiv sind.
+				Kann die FPS deutlich verbessern, wenn viele Wände in der Nähe vorhanden sind.
+				'''
+		}
+
+		NoShaking: {
+			Label: "[i:5120] Vanilla-Bildschirmerschütterung deaktivieren"
+			Tooltip:
+				'''
+				Deaktiviert den Kamera-Schüttler-Effekt, der von Deerclops und anderen Feinden verwendet wird.
+				Beeinflusst keine Mod-Schüttelsysteme, aber die meisten Mods haben ihre eigenen Abschaltoptionen.
+				'''
+		}
+	}
+
+	ProjectileHighlightMode: {
+		Tooltip: ""
+
+		None: {
+			Label: Keine
+			Tooltip: Es werden keine Hervorhebungseffekte verwendet.
+		}
+
+		Simple: {
+			Label: Einfach
+			Tooltip: Versucht, das Projektilsprite in der gewählten Farbe auf einer eigenen Ebene neu zu zeichnen.
+		}
+
+		Fancy: {
+			Label: Aufwendig
+			Tooltip: Nutzt Shader, um das Projektil aufzuhellen und eine Umrandung zu zeichnen.
+		}
+	}
+}
