@@ -15,21 +15,15 @@ namespace LegibleBossfights
 
         private int checktime = 15;
 
-        private static bool isWOTGBoss = false;
         private static bool setback = false;
 
         public override void PostUpdatePlayers()
         {
             if (checktime-- > 0)
                 return;
-            isWOTGBoss = false;
+
             bool isBossAlive = IsAnyBossAlive();
 
-
-            //if (!LegibleBossfights.AutoFriendlyProjectileHide)
-            //     LegibleBossfights.FadeProjectiles = true;
-            //else if (LegibleBossfights.FadeProjectiles && !isBossAlive)
-            //    LegibleBossfights.FadeProjectiles = false;
 
             if (!LegibleBossfights.AutoParticle)
                 LegibleBossfights.ReduceParticles = true;
@@ -46,11 +40,7 @@ namespace LegibleBossfights
                 if (LegibleBossfights.AutoParticle) LegibleBossfights.ReduceParticles = true;
                 if (LegibleBossfights.AutoHideWalls) LegibleBossfights.HideWalls = true;
 
-                if (isWOTGBoss)
-                {
-                    LegibleBossfights.ProjectileHighlightMode = ProjectileHighlightMode.None;
-                    setback = true;
-                }
+
             }
             else if (!isBossAlive && _wasBossAlive)// Boss JUST despawned
             {
@@ -74,9 +64,6 @@ namespace LegibleBossfights
             for (int i = 0; i < Main.maxNPCs; i++)
             {
                 NPC n = Main.npc[i];
-                if (LegibleBossfights.WotGLoaded)
-                    if (n.type == LegibleBossfights.AvatarOfEmptinessID || n.type == LegibleBossfights.NamelessDietyID || n.type == LegibleBossfights.MarsID)
-                        isWOTGBoss = true;
                 if (!n.active) continue;
                 if (n.boss) return true;
             }

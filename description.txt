@@ -1,5 +1,8 @@
 A lightweight mod that attempts to make it easier to see whats going on during bossfights.
 
+V1.1.3:
+-Fixed bug that would break UI drawing in some cases.
+
 V1.1.2:
 -Added localization files for all in-game languages via a translator app.
 

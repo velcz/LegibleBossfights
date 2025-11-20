@@ -1,4 +1,4 @@
-﻿[h3]A lightweight mod that attempts to make it easier to see whats going on during bossfights, ESPECIALLY in multiplayer.[/h3]
+﻿[h1]A lightweight mod that attempts to make it easier to see whats going on during bossfights, ESPECIALLY in multiplayer.[/h1]
 
 Also if you constantly lose your cursor in the middle of fights (I know you do), this is for you <3
 
@@ -19,8 +19,12 @@ Pretty much every part of this mod can be adjusted to your liking.
 
 [u]Please report any issues to github, or open a discussion on this page. Also open to any ideas for improvements.[/u]
 
-(Translated page on github // Переведённая страница доступна здесь // 翻译页面在此处查看 // La page traduite est disponible ici // Die übersetzte Seite ist hier verfügbar // La pagina tradotta è disponibile qui // La página traducida está disponible aquí // A página traduzida está disponível aqui // Przetłumaczona strona jest dostępna tutaj)
-https://github.com/velcz/LegibleBossfights
+[h3][i](Translated page on github // Переведённая страница доступна здесь // 翻译页面在此处查看 // La page traduite est disponible ici // Die übersetzte Seite ist hier verfügbar // La pagina tradotta è disponibile qui // La página traducida está disponible aquí // A página traduzida está disponível aqui // Przetłumaczona strona jest dostępna tutaj)[/i][/h3]
+
+ >>[h3]https://github.com/velcz/LegibleBossfights[/h3]<<
+
+V1.1.3:
+-Fixed bug that would break UI drawing in some cases.
 
 V1.1.2:
 -Added localization files for all in-game languages via a translator app.
@@ -32,6 +36,3 @@ V1.1.1:
 V1.1:
 -Greatly improved enemy projectile highlighting system, with options for different styles of highlights.
 -Added optional function to disable background wall drawing.
-	* Can help with visibility.
-	* Also doubles as a big performance gain in densely walled areas.
-	* Disabled by default.

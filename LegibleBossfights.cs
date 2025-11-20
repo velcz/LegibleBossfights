@@ -53,13 +53,6 @@ namespace LegibleBossfights
 
         public static bool NoShaking = false;
 
-        /// <summary>
-        /// Checks to see if Wrath of the Gods is loaded. Used to force disable projectile sprite highlighting during any
-        /// of these fights as all the wacky effects cause issues with the highlight system. You really don't need
-        /// it regardless for these fights.
-        /// </summary>
-        internal static bool WotGLoaded;
-        internal static Mod WotGMod;
 
         public override void Load()
         {
@@ -82,19 +75,12 @@ namespace LegibleBossfights
             ToggleHideWallsKey = KeybindLoader.RegisterKeybind(this, "Toggle Hide Walls", Keys.OemSemicolon);
 
             HighlightShader = ModContent.Request<Effect>("LegibleBossfights/Effects/glowshader", AssetRequestMode.ImmediateLoad).Value;
-            WotGLoaded = ModLoader.TryGetMod("NoxusBoss", out WotGMod);
+
             base.Load();
         }
-        internal static int NamelessDietyID, AvatarOfEmptinessID, MarsID;
         public override void PostSetupContent()
         {
             ModContent.GetInstance<LegibleBossfightsConfig>().SetLineThickness();
-            if (WotGLoaded)
-            {
-                AvatarOfEmptinessID = WotGMod.Find<ModNPC>("AvatarOfEmptiness").Type;
-                NamelessDietyID = WotGMod.Find<ModNPC>("NamelessDeityBoss").Type;//MarsBody
-                MarsID = WotGMod.Find<ModNPC>("MarsBody").Type;
-            }
             base.PostSetupContent();
         }
         public override void Unload()

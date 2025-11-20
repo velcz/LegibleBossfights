@@ -156,7 +156,7 @@ namespace LegibleBossfights
                     }
 
                 }
-                spriteBatch.End();
+                
                 //DO FANCY HIGHLIGHT DRAWING
                 if (LegibleBossfights.ProjectileHighlightMode == ProjectileHighlightMode.Fancy)
                 {
@@ -164,6 +164,7 @@ namespace LegibleBossfights
                     EffectParameter effectParameter = effect.Parameters["uImageSize0"];
                     EffectParameter effectParameter2 = effect.Parameters["OutlineThickness"];
                     EffectParameter effectParameter3 = effect.Parameters["OutlineColor"];
+                    spriteBatch.End();
                     spriteBatch.Begin(SpriteSortMode.Texture, BlendState.NonPremultiplied, SamplerState.LinearClamp, DepthStencilState.None, RasterizerState.CullNone, effect, Main.UIScaleMatrix);
                     for (int i = 0; i < passedprojlist.Count; i++)
                     {
@@ -193,7 +194,6 @@ namespace LegibleBossfights
                         {
                             effectParameter3.SetValue(outlineColor.ToVector4());
                         }
-                        //spriteBatch.End();
                         
                         spriteBatch.Draw(
                             tex,
@@ -218,12 +218,10 @@ namespace LegibleBossfights
             spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.NonPremultiplied, SamplerState.AnisotropicClamp, DepthStencilState.Default, RasterizerState.CullNone, null, Main.UIScaleMatrix);
             if (LegibleBossfights.ShowLine)
             {
-                
                 float killfade = fadesize * 2;
                 Vector2 diff = mouseposition - playerposition;
                 float len = diff.Length();
                 len = MathF.Max(-fadesize / 2, len - fadesize * 2);
-                //if (len <= 0) imvisible = false;
                 float rot = diff.ToRotation();
                 float cutsprite = 0;
 
